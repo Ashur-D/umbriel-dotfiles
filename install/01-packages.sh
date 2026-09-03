@@ -25,16 +25,33 @@ CORE_PACKAGES=(
     noctalia-git
 
     # Terminal, Shell & Tools
-    kitty starship fastfetch yazi neovim chezmoi xdg-user-dirs
+    kitty
+    starship
+    fastfetch
+    yazi
+    neovim
+    chezmoi
+    xdg-user-dirs
 
     # Audio & Power
-    pipewire pipewire-pulse wireplumber playerctl power-profiles-daemon
+    pipewire
+    pipewire-pulse
+    wireplumber
+    playerctl
+    power-profiles-daemon
+    python-gobject
 
     # Networking & Bluetooth
-    bluez iwd
+    bluez
+    iwd
 
     # Capture, Fonts & GTK
-    wl-clipboard satty gpu-screen-recorder bibata-cursor-theme-bin maplemono-ttf adw-gtk-theme
+    wl-clipboard
+    satty
+    gpu-screen-recorder
+    bibata-cursor-theme-bin
+    maplemono-ttf
+    adw-gtk-theme
 )
 
 echo ":: Installing core packages..."

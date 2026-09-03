@@ -59,3 +59,10 @@ match.namespace = "^noctalia-(bar-[^\"+]|notification|dock|panel|attached-panel|
 blur = true
 blur_ignore_alpha = 0.5
 blur_popups = true
+
+# Floating rules for interactive installer/uninstaller popups
+[[window_rule]]
+match.title = "^(Install Optional Apps|Uninstall Packages)$"
+default_floating = true
+default_size = [880, 620]
+default_position = { x = 0, y = 0, anchor = "center" }
