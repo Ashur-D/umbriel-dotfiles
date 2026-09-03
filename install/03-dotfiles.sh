@@ -46,4 +46,11 @@ for app in "${HIDDEN_APPS[@]}"; do
     fi
 done
 
+echo ":: Fetching wallpapers into ~/Pictures..."
+if [ ! -d "$HOME/Pictures/wallpapers" ]; then
+    git clone --depth 1 https://github.com/Ashur-D/wallpapers.git "$HOME/Pictures/wallpapers-tmp"
+    mv "$HOME/Pictures/wallpapers-tmp/wallpapers" "$HOME/Pictures/wallpapers"
+    rm -rf "$HOME/Pictures/wallpapers-tmp"
+fi
+
 echo ":: Dotfiles and post-install configuration complete."
