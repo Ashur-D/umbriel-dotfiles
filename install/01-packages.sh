@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo ":: [1/3] Installing yay and core package stack..."
 
-# Ensure Yay and gum are installed
+# Ensure Yay is installed
 if ! command -v yay &>/dev/null; then
     echo ":: Installing yay from AUR..."
     sudo pacman -S --needed --noconfirm git base-devel
@@ -11,10 +11,6 @@ if ! command -v yay &>/dev/null; then
     git clone https://aur.archlinux.org/yay.git "$BUILD_DIR/yay"
     (cd "$BUILD_DIR/yay" && makepkg -si --noconfirm)
     rm -rf "$BUILD_DIR"
-fi
-
-if ! command -v gum &>/dev/null; then
-    sudo pacman -S --needed --noconfirm gum
 fi
 
 # Core desktop, shell, theming, and tool packages
