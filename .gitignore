@@ -1,0 +1,21 @@
+# Logs & runtime artifacts
+logs/
+*.log
+tmp/
+
+# Cache & state files
+.cache/
+*.swp
+*.swo
+*~
+
+# Generated themes & transient editor files
+dot_config/kitty/themes/
+dot_config/zed/themes/
+dot_config/yazi/flavors/
+dot_config/nvim/lua/matugen*
+dot_config/nvim/lazy-lock.json
+
+# OS / tool specific
+.DS_Store
+Thumbs.db
