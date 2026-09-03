@@ -21,11 +21,10 @@ echo ":: Authenticating sudo..."
 sudo -v
 while true; do sudo -n true; sleep 50; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Execute stages in order
+# Execute 3 stages in order
 "$SCRIPT_DIR/01-packages.sh"
-"$SCRIPT_DIR/02-desktop.sh"
-"$SCRIPT_DIR/03-system.sh"
-"$SCRIPT_DIR/04-dotfiles.sh"
+"$SCRIPT_DIR/02-system.sh"
+"$SCRIPT_DIR/03-dotfiles.sh"
 
 echo ":: ✨ Installation completed successfully!"
 echo ":: Log saved to: $LOG_FILE"

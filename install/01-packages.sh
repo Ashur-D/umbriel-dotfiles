@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo ":: [1/4] Installing base build tools & official packages..."
+echo ":: [1/3] Installing yay and package stack..."
 
 # Ensure Yay is installed
 if ! command -v yay &>/dev/null; then
@@ -13,11 +13,12 @@ if ! command -v yay &>/dev/null; then
     rm -rf "$BUILD_DIR"
 fi
 
-# Base official packages & build prerequisites (Fast binary installation)
-OFFICIAL_PKGS=(
-    # Build tools for Wayland git packages
-    base-devel git meson ninja pkgconf wayland-protocols tomlplusplus nlohmann-json
-    wlroots0.20 cairo jemalloc lcms2 libdrm libglvnd libinput libxkbcommon pango pixman
+# All desktop, shell, theming, and tool packages
+PACKAGES=(
+    # Compositor & Desktop Shell
+    xdg-desktop-portal-umbriel-git
+    umbriel-git
+    noctalia-git
 
     # Terminal, Shell & Tools
     kitty starship fastfetch yazi neovim chezmoi xdg-user-dirs
@@ -28,9 +29,11 @@ OFFICIAL_PKGS=(
     # Networking & Bluetooth
     bluez iwd impala
 
-    # Capture, Clipboard & GTK
-    wl-clipboard satty gpu-screen-recorder imagemagick adw-gtk-theme nwg-look
+    # Capture, Fonts & GTK
+    wl-clipboard satty gpu-screen-recorder imagemagick
+    bibata-cursor-theme-bin maplemono-ttf adw-gtk-theme nwg-look
 )
 
-sudo pacman -S --needed --noconfirm "${OFFICIAL_PKGS[@]}"
-echo ":: Base packages installed successfully."
+echo ":: Installing all packages..."
+yay -S --needed --noconfirm --mflags --nocheck "${PACKAGES[@]}"
+echo ":: Packages installed successfully."

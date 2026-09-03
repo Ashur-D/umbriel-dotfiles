@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo ":: [4/4] Applying dotfiles, plugins, and launcher settings..."
+echo ":: [3/3] Applying dotfiles, plugins, and launcher settings..."
 
 # 1. Apply dotfiles via Chezmoi
 mkdir -p "$HOME/.config/chezmoi"

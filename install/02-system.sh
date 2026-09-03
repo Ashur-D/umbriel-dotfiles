@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo ":: [3/4] Configuring hardware drivers and system services..."
+echo ":: [2/3] Configuring hardware drivers and system services..."
 
 # Detect installed kernels and auto-install Nvidia drivers + matching headers if Nvidia GPU exists
 INSTALLED_KERNELS=$(pacman -Qq | grep -E '^linux(-[a-z0-9]+)?$' | grep -v 'firmware' || true)
