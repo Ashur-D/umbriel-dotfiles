@@ -11,6 +11,15 @@ mkdir -p "$HOME/.config/chezmoi"
 echo "sourceDir = \"$REPO_DIR\"" > "$HOME/.config/chezmoi/chezmoi.toml"
 chezmoi apply --force
 
+# Enable Nvidia environment variables if Nvidia GPU is present
+if lspci 2>/dev/null | grep -Ei "vga|3d" | grep -qi "nvidia"; then
+    if [ -f "$HOME/.config/umbriel/general.toml" ]; then
+        echo ":: Nvidia GPU detected. Enabling Nvidia environment variables in Umbriel config..."
+        sed -i 's/^#\s*LIBVA_DRIVER_NAME/LIBVA_DRIVER_NAME/' "$HOME/.config/umbriel/general.toml"
+        sed -i 's/^#\s*__GLX_VENDOR_LIBRARY_NAME/__GLX_VENDOR_LIBRARY_NAME/' "$HOME/.config/umbriel/general.toml"
+    fi
+fi
+
 # 2. Install Yazi plugins (package.toml now in place)
 if command -v ya &>/dev/null; then
     echo ":: Installing Yazi plugins from package.toml..."

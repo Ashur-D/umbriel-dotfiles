@@ -28,6 +28,8 @@ new_on_top = true
 
 [overview]
 zoom = 0.5
+background_blur = false
+shortcuts = false
 
 [hot_corners.top_left]
 enabled = true

@@ -75,5 +75,5 @@
 "Mod+Tab" = "scratchpad-focus-next"
 
 # ---------------- Overview & Layout ----------------
-"Mod+O" = "overview-toggle"
-"Mod+Shift+T" = "spawn:/home/ash/.config/scripts/toggle-layout.sh"
+"Mod+S" = "overview-toggle"
+# "Mod+Shift+T" =

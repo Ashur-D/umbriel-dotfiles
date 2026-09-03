@@ -17,10 +17,6 @@ alias gp='git push'
 alias gpp='git pull'
 alias gcm='git commit -m "updated"'
 
-# Shortcuts for app management
-alias install="app-install"
-alias remove="app-remove"
-
 function gc() {
     MESSAGE=$(gum input --placeholder "Enter commit message..." --width 50)
     if [ -n "$MESSAGE" ]; then

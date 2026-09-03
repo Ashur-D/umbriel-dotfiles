@@ -254,24 +254,24 @@ source = "wallpaper"
 wallpaper_scheme = "soft"
 
     [theme.templates]
-    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
-    community_ids = [ "antigravity", "opencode", "discord", "neovim", "obsidian", "zed", "steam", "yazi" ]
+    builtin_ids = [ "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
+    community_ids = ["neovim","yazi" ]
 
 [wallpaper]
-directory = "/home/ash/dotfiles/media/wallpapers"
-directory_dark = "/home/ash/dotfiles/media/wallpapers"
-directory_light = "/home/ash/dotfiles/media/wallpapers"
+directory = "/home/ash/Pictures/wallpapers"
+directory_dark = "/home/ash/Pictures/wallpapers"
+directory_light = "/home/ash/Pictures/wallpapers"
 transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ash/dotfiles/media/wallpapers/wallpaper87.png"
+    path = "/home/ash/Pictures/wallpapers/wallpaper87.png"
 
     [wallpaper.last]
-    path = "/home/ash/dotfiles/media/wallpapers/wallpaper87.png"
+    path = "/home/ash/Pictures/wallpapers/wallpaper87.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ash/dotfiles/media/wallpapers/wallpaper87.png"
+    path = "/home/ash/Pictures/wallpapers/wallpaper87.png"
 
 [widget.clock]
 color = "secondary"
