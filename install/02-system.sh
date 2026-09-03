@@ -27,25 +27,4 @@ sudo systemctl enable --now \
     systemd-resolved.service \
     power-profiles-daemon.service 2>/dev/null || true
 
-# Configure greetd with noctalia-greeter
-echo ":: Configuring greetd with Noctalia Greeter..."
-sudo mkdir -p /etc/greetd
-sudo tee /etc/greetd/config.toml >/dev/null << 'EOF'
-[terminal]
-vt = 1
-
-[default_session]
-command = "env WLR_NO_HARDWARE_CURSORS=1 noctalia-greeter-session"
-user = "greeter"
-EOF
-
-# Ensure greeter permissions, groups, and state directory exist
-sudo usermod -aG video,render,input greeter 2>/dev/null || true
-sudo mkdir -p /var/lib/noctalia-greeter
-sudo chown -R greeter:greeter /var/lib/noctalia-greeter 2>/dev/null || true
-sudo systemd-tmpfiles --create /usr/lib/tmpfiles.d/noctalia-greeter.conf 2>/dev/null || true
-
-# Enable greetd display manager
-sudo systemctl enable greetd.service
-
 echo ":: System and hardware configuration complete."

@@ -45,10 +45,6 @@ CORE_PACKAGES=(
     bluez
     iwd
 
-    # Display Manager / Greeter
-    greetd
-    noctalia-greeter
-
     # Capture, Fonts & GTK
     wl-clipboard
     satty
