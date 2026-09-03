@@ -1,0 +1,61 @@
+# Umbriel window and layer rules
+# Converted from Hyprland config
+
+# Note: Hyprland's "suppress_event = max" and tag system have no Umbriel equivalent.
+# Default opacity for all windows (was tag = "+default-opacity" with opacity = "0.97 0.9")
+[[window_rule]]
+match.app_id = ".*"
+opacity = 0.97
+
+# Float Steam
+[[window_rule]]
+match.app_id = "^steam$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = "^Steam$"
+default_floating = true
+default_size = [1100, 700]
+default_position = { x = 0, y = 0, anchor = "center" }
+
+[[window_rule]]
+match.app_id = "^steam.*$"
+opacity = 1.0
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = "^Friends List$"
+default_size = [460, 800]
+
+# Steam idle inhibit (no direct equivalent in Umbriel)
+# idle_inhibit = "fullscreen"
+
+# Satty
+[[window_rule]]
+match.app_id = "^com.gabm.satty$"
+default_floating = true
+default_position = { x = 0, y = 0, anchor = "center" }
+default_pinned = true
+default_size = [460, 800]
+
+# Noctalia
+[[window_rule]]
+match.app_id = "^dev.noctalia.Noctalia$"
+default_floating = true
+default_size = [1080, 920]
+
+# XWayland drag fix (no_focus not supported in Umbriel)
+# [[window_rule]]
+# match.app_id = "^$"
+# match.title = "^$"
+# xwayland = true
+# default_floating = true
+# default_focused = false
+
+# Layer rules (Noctalia layer surfaces)
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\"+]|notification|dock|panel|attached-panel|osd|window-switcher)$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_popups = true
