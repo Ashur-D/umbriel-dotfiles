@@ -13,12 +13,6 @@ if lspci 2>/dev/null | grep -Ei "vga|3d" | grep -qi "nvidia"; then
         NVIDIA_PKGS+=("${k}-headers")
     done
     sudo pacman -S --needed --noconfirm "${NVIDIA_PKGS[@]}"
-
-    if [ -f "$HOME/.config/umbriel/general.toml" ]; then
-        echo ":: Enabling Nvidia environment variables in Umbriel config..."
-        sed -i 's/^#\s*LIBVA_DRIVER_NAME/LIBVA_DRIVER_NAME/' "$HOME/.config/umbriel/general.toml"
-        sed -i 's/^#\s*__GLX_VENDOR_LIBRARY_NAME/__GLX_VENDOR_LIBRARY_NAME/' "$HOME/.config/umbriel/general.toml"
-    fi
 fi
 
 # Standard user directories
