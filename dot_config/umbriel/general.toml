@@ -21,6 +21,5 @@ SDL_VIDEODRIVER = "wayland"
 MOZ_ENABLE_WAYLAND = "1"
 ELECTRON_OZONE_PLATFORM_HINT = "auto"
 # Safe Nvidia environment variables (enabled automatically if Nvidia GPU is detected)
-# LIBVA_DRIVER_NAME = "nvidia"
-# __GLX_VENDOR_LIBRARY_NAME = "nvidia"
-
+LIBVA_DRIVER_NAME = "nvidia"
+__GLX_VENDOR_LIBRARY_NAME = "nvidia"

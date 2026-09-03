@@ -17,4 +17,5 @@ files = [
   "rules.toml",
   "workspaces.toml",
   # "monolith.toml",
+  "noctalia.toml",
 ]
