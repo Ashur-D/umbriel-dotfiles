@@ -46,16 +46,11 @@ CORE_PACKAGES=(
     iwd
 
     # Capture, Fonts & GTK
-    wl-clipboard
     satty
     gpu-screen-recorder
     bibata-cursor-theme-bin
     maplemono-ttf
     adw-gtk-theme
-
-    # Optional
-    zed
-    helium-browser-bin
 )
 
 echo ":: Installing core packages..."

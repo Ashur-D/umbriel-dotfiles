@@ -27,11 +27,11 @@ order = [ "main" ]
         foreground = "secondary"
         id = "g1"
         members = [ "media", "tray" ]
-        opacity = 0.59999996423721313
+        opacity = 0.60000002384185791
         padding = 18.0
 
         [[bar.main.capsule_group]]
-        accordion = false
+        accordion = true
         accordion_direction = "end"
         border = ""
         enabled = true
@@ -39,7 +39,7 @@ order = [ "main" ]
         foreground = "secondary"
         id = "g2"
         members = [ "clock", "recorder" ]
-        opacity = 0.59999996423721313
+        opacity = 0.60000002384185791
         padding = 18.0
 
 [control_center]
@@ -76,7 +76,6 @@ widget_order = []
 
 [idle]
 behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
-pre_action_fade_seconds = 0
 
     [idle.behavior.lock]
     action = "lock"
@@ -167,7 +166,7 @@ widget_order = [
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 240.0
-    box_width = 448.0
+    box_width = 512.0
     cx = 960.0
     cy = 356.0
     output = "DP-1"
@@ -225,7 +224,7 @@ enabled = [ "noctalia/screen_recorder", "cleboost/zed-provider" ]
     name = "community"
 
 [shell]
-avatar_path = "/home/ash/Downloads/3c223a02d512059985adac41c0c30380.jpg"
+avatar_path = "/home/ash/Pictures/wallpapers/wallpapers/wallpaper22.jpg"
 font_family = "Maple Mono"
 settings_window_translucent = true
 
@@ -253,31 +252,22 @@ mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "soft"
 
-    [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
-    community_ids = ["neovim","yazi" ]
-
 [wallpaper]
 directory = "/home/ash/Pictures/wallpapers"
 directory_dark = "/home/ash/Pictures/wallpapers"
-directory_light = "/home/ash/Pictures/wallpapers"
-transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ash/Pictures/wallpapers/wallpaper87.png"
+    path = "/home/ash/Pictures/wallpapers/wallpaper13.jpg"
 
     [wallpaper.last]
-    path = "/home/ash/Pictures/wallpapers/wallpaper87.png"
+    path = "/home/ash/Pictures/wallpapers/wallpaper13.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ash/Pictures/wallpapers/wallpaper87.png"
+    path = "/home/ash/Pictures/wallpapers/wallpaper13.jpg"
 
 [widget.clock]
-color = "secondary"
 format = "{:L%A %I:%M}"
-icon_color = "secondary"
-interactive = false
 
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
