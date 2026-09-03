@@ -46,7 +46,6 @@ CORE_PACKAGES=(
     iwd
 
     # Capture, Fonts & GTK
-    wl-clipboard
     satty
     gpu-screen-recorder
     bibata-cursor-theme-bin
