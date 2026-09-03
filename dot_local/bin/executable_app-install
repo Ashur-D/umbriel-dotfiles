@@ -8,6 +8,8 @@ if ! command -v gum &>/dev/null; then
 fi
 
 OPTIONAL_LIST=(
+    "🔍 [ Search Arch / AUR for any package... ]"
+    ""
     "─── [ DAILY DESKTOP APPS ] ─────────────────────────"
     "zen-browser-bin             Fast, privacy-focused browser"
     "helium-browser-bin          Minimal lightweight browser"
@@ -64,7 +66,7 @@ OPTIONAL_LIST=(
     "asciinema                   Terminal session recorder and sharer"
 )
 
-HEADER_TEXT="📦 Optional Software Installer  |  SPACE: select  |  ENTER: confirm  |  ESC: exit"
+HEADER_TEXT="📦 Software Catalog  |  SPACE: select  |  ENTER: confirm  |  ESC: exit"
 
 SELECTED_ITEMS=$(printf "%s\n" "${OPTIONAL_LIST[@]}" | gum choose --no-limit --height 18 --header "$HEADER_TEXT" || true)
 
@@ -73,16 +75,80 @@ if [ -z "$SELECTED_ITEMS" ]; then
     exit 0
 fi
 
-# Extract valid package names (ignore header dividers and empty lines)
-PKGS_TO_INSTALL=()
-while IFS= read -r line; do
-    [ -z "$line" ] && continue
-    if [[ "$line" =~ ^─── ]]; then
-        continue
+# Check if user selected the live AUR search option
+IS_SEARCH=false
+if echo "$SELECTED_ITEMS" | grep -q "🔍"; then
+    IS_SEARCH=true
+fi
+
+# 1. Handle Live AUR / Arch Search Mode
+if [ "$IS_SEARCH" = true ]; then
+    clear
+    gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "🔍 Search Arch & AUR Repositories"
+    QUERY=$(gum input --placeholder "Type package name (e.g. spotify, brave, discord)..." --width 50 || true)
+
+    if [ -z "$QUERY" ]; then
+        gum style --foreground 212 "Search cancelled."
+        exit 0
     fi
-    pkg=$(echo "$line" | awk '{print $1}')
-    [ -n "$pkg" ] && PKGS_TO_INSTALL+=("$pkg")
-done <<< "$SELECTED_ITEMS"
+
+    clear
+    echo ":: Searching Arch & AUR for '$QUERY'..."
+    
+    # Parse yay search results into clean selectable lines
+    SEARCH_RESULTS=$(python3 -c '
+import subprocess, sys
+
+query = sys.argv[1]
+res = subprocess.run(["yay", "-Ss", query], capture_output=True, text=True)
+lines = res.stdout.strip().split("\n")
+items = []
+for i in range(0, len(lines), 2):
+    header = lines[i].strip()
+    desc = lines[i+1].strip() if i+1 < len(lines) else ""
+    if not header:
+        continue
+    pkg = header.split()[0]
+    # Strip aur/ or repo/ prefix for clarity
+    short_pkg = pkg.split("/")[-1]
+    items.append(f"{short_pkg:32} {desc}")
+
+for item in items[:80]:
+    print(item)
+' "$QUERY" 2>/dev/null || true)
+
+    if [ -z "$SEARCH_RESULTS" ]; then
+        gum style --foreground 212 "No packages found for '$QUERY'."
+        exit 0
+    fi
+
+    SEARCH_HEADER="🔍 Results for '$QUERY'  |  SPACE: select  |  ENTER: confirm"
+    SELECTED_SEARCH=$(echo "$SEARCH_RESULTS" | gum choose --no-limit --height 18 --header "$SEARCH_HEADER" || true)
+
+    if [ -z "$SELECTED_SEARCH" ]; then
+        gum style --foreground 212 "No packages selected. Exiting."
+        exit 0
+    fi
+
+    PKGS_TO_INSTALL=()
+    while IFS= read -r line; do
+        [ -z "$line" ] && continue
+        pkg=$(echo "$line" | awk '{print $1}')
+        [ -n "$pkg" ] && PKGS_TO_INSTALL+=("$pkg")
+    done <<< "$SELECTED_SEARCH"
+
+else
+    # 2. Handle Curated List Selection
+    PKGS_TO_INSTALL=()
+    while IFS= read -r line; do
+        [ -z "$line" ] && continue
+        if [[ "$line" =~ ^─── || "$line" =~ ^🔍 ]]; then
+            continue
+        fi
+        pkg=$(echo "$line" | awk '{print $1}')
+        [ -n "$pkg" ] && PKGS_TO_INSTALL+=("$pkg")
+    done <<< "$SELECTED_ITEMS"
+fi
 
 if [ ${#PKGS_TO_INSTALL[@]} -eq 0 ]; then
     gum style --foreground 212 "No valid packages selected. Exiting."
