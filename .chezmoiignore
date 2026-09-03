@@ -1,0 +1,11 @@
+# Generated theme and cache files (Noctalia generates these dynamically)
+.config/kitty/themes/**
+.config/zed/themes/**
+.config/yazi/flavors/**
+.config/nvim/lua/matugen*
+.config/nvim/lazy-lock.json
+
+# Cache, logs, and transient files
+**/.git/**
+logs/**
+tmp/**
