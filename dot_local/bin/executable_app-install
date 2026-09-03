@@ -11,63 +11,63 @@ clear
 gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "📦 Optional Software Installer"
 
 OPTIONAL_LIST=(
-    # --- Daily Desktop Apps ---
-    "zen-browser-bin             [Daily] Fast, privacy-focused browser"
-    "helium-browser-bin          [Daily] Minimal lightweight browser"
-    "vesktop-bin                 [Daily] Discord client with Wayland screenshare & Vencord"
-    "obsidian                    [Daily] Markdown knowledge base & notes"
-    "localsend                   [Daily] Local cross-platform file sharing"
-    "fastpotify-bin              [Daily] Spotify TUI client"
-    "thunar                      [Daily] GTK graphical file manager"
-
-    # --- Gaming ---
-    "steam                       [Gaming] Valve Steam game launcher"
-    "gamescope                   [Gaming] Micro-compositor for isolated gaming"
-    "proton-cachyos              [Gaming] Optimized Proton compatibility tool"
-
-    # --- Development & Code ---
-    "zed                         [Dev] High-performance GUI code editor"
-    "lazygit                     [Dev] Terminal UI for Git commands"
-    "git                         [Dev] Version control system"
-    "openssh                     [Dev] SSH client & server tools"
-
-    # --- Modern CLI & Navigation ---
-    "eza                         [CLI] Modern ls replacement with git status"
-    "fd                          [CLI] Fast, user-friendly alternative to find"
-    "zoxide                      [CLI] Smarter cd directory jumper"
-    "fzf                         [CLI] General-purpose fuzzy finder"
-
-    # --- System Monitoring & Management ---
-    "btop                        [System] Modern resource & hardware monitor"
-    "bottom                      [System] Graphical terminal process monitor"
-    "systemctl-tui               [System] TUI for managing systemd services"
-    "stacer-bin                  [System] Linux system optimizer & GUI monitor"
-    "netsonar-bin                [System] Real-time network monitor"
-    "dust                        [System] du disk usage visualizer in Rust"
-    "gdu                         [System] Fast interactive disk usage analyzer"
-    "ncdu                        [System] Classic ncurses disk analyzer"
-    "pachub                      [System] Front-end for Pacman/AUR packages"
-    "efibootmgr                  [System] Tool to modify UEFI boot entries"
-
-    # --- Media, GTK & System Libraries ---
-    "nwg-look                    [Desktop] GTK3/4 settings and theme editor"
-    "mpv                         [Media] High-performance media & video player"
-    "imv                         [Media] Fast image viewer for Wayland"
-    "python-gobject              [System] Python GObject bindings (GTK / power-profiles)"
-
-    # --- Terminal Rice & Visuals ---
-    "cbonsai                     [Rice] Bonsai tree generator in terminal"
-    "catnap-git                  [Rice] Fast aesthetic system fetch tool"
-    "weathr                      [Rice] Terminal weather app with ASCII animation"
-    "stormy-bin                  [Rice] Minimal weather forecast fetcher"
-    "terminaltexteffects         [Rice] Visual text animation effect engine"
-    "terminal-rain-lightning-git [Rice] Matrix digital rain with lightning"
-    "scope-tui                   [Rice] Audio oscilloscope & vectorscope in terminal"
-    "astroterm                   [Rice] Planetarium simulator in terminal"
-    "asciinema                   [Rice] Terminal session recorder and sharer"
+    "─── [ DAILY DESKTOP APPS ] ─────────────────────────"
+    "zen-browser-bin             Fast, privacy-focused browser"
+    "helium-browser-bin          Minimal lightweight browser"
+    "vesktop-bin                 Discord client with Wayland screenshare & Vencord"
+    "obsidian                    Markdown knowledge base & notes"
+    "localsend                   Local cross-platform file sharing"
+    "fastpotify-bin              Spotify TUI client"
+    "thunar                      GTK graphical file manager"
+    ""
+    "─── [ GAMING ] ─────────────────────────────────────"
+    "steam                       Valve Steam game launcher"
+    "gamescope                   Micro-compositor for isolated gaming"
+    "proton-cachyos              Optimized Proton compatibility tool"
+    ""
+    "─── [ DEVELOPMENT & CODE ] ─────────────────────────"
+    "zed                         High-performance GUI code editor"
+    "lazygit                     Terminal UI for Git commands"
+    "git                         Version control system"
+    "openssh                     SSH client & server tools"
+    ""
+    "─── [ MODERN CLI & NAVIGATION ] ───────────────────"
+    "eza                         Modern ls replacement with git status"
+    "fd                          Fast, user-friendly alternative to find"
+    "zoxide                      Smarter cd directory jumper"
+    "fzf                         General-purpose fuzzy finder"
+    ""
+    "─── [ SYSTEM MANAGEMENT & UTILITIES ] ──────────────"
+    "btop                        Modern resource & hardware monitor"
+    "bottom                      Graphical terminal process monitor"
+    "systemctl-tui               TUI for managing systemd services"
+    "stacer-bin                  Linux system optimizer & GUI monitor"
+    "netsonar-bin                Real-time network monitor"
+    "dust                        du disk usage visualizer in Rust"
+    "gdu                         Fast interactive disk usage analyzer"
+    "ncdu                        Classic ncurses disk analyzer"
+    "pachub                      Front-end for Pacman/AUR packages"
+    "efibootmgr                  Tool to modify UEFI boot entries"
+    ""
+    "─── [ MEDIA & GTK CONFIGURATION ] ─────────────────"
+    "nwg-look                    GTK3/4 settings and theme editor"
+    "mpv                         High-performance media & video player"
+    "imv                         Fast image viewer for Wayland"
+    "python-gobject              Python GObject bindings (GTK / power-profiles)"
+    ""
+    "─── [ TERMINAL RICE & VISUALS ] ────────────────────"
+    "cbonsai                     Bonsai tree generator in terminal"
+    "catnap-git                  Fast aesthetic system fetch tool"
+    "weathr                      Terminal weather app with ASCII animation"
+    "stormy-bin                  Minimal weather forecast fetcher"
+    "terminaltexteffects         Visual text animation effect engine"
+    "terminal-rain-lightning-git Matrix digital rain with lightning"
+    "scope-tui                   Audio oscilloscope & vectorscope in terminal"
+    "astroterm                   Planetarium simulator in terminal"
+    "asciinema                   Terminal session recorder and sharer"
 )
 
-echo "Select packages to install (SPACE/TAB to select multiple, ENTER to confirm, ESC to exit):"
+echo "Select packages to install (SPACE/TAB to select, ENTER to confirm, ESC to exit):"
 echo ""
 
 SELECTED_ITEMS=$(printf "%s\n" "${OPTIONAL_LIST[@]}" | gum choose --no-limit --height 24 || true)
@@ -77,13 +77,22 @@ if [ -z "$SELECTED_ITEMS" ]; then
     exit 0
 fi
 
-# Extract package names (first column before whitespace)
+# Extract valid package names (ignore header dividers and empty lines)
 PKGS_TO_INSTALL=()
 while IFS= read -r line; do
     [ -z "$line" ] && continue
+    # Skip section header lines
+    if [[ "$line" =~ ^─── ]]; then
+        continue
+    fi
     pkg=$(echo "$line" | awk '{print $1}')
-    PKGS_TO_INSTALL+=("$pkg")
+    [ -n "$pkg" ] && PKGS_TO_INSTALL+=("$pkg")
 done <<< "$SELECTED_ITEMS"
+
+if [ ${#PKGS_TO_INSTALL[@]} -eq 0 ]; then
+    gum style --foreground 212 "No valid packages selected. Exiting."
+    exit 0
+fi
 
 clear
 gum style --foreground 212 "📦 You selected the following packages for installation:"
