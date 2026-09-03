@@ -22,7 +22,7 @@ CORE_PACKAGES=(
     # Compositor & Desktop Shell
     xdg-desktop-portal-umbriel-git
     umbriel-git
-    noctalia-git
+    noctalia
 
     # Terminal, Shell & Tools
     kitty
@@ -45,12 +45,21 @@ CORE_PACKAGES=(
     bluez
     iwd
 
+    # Display Manager / Greeter
+    greetd
+    noctalia-greeter
+
     # Capture, Fonts & GTK
+    wl-clipboard
     satty
     gpu-screen-recorder
     bibata-cursor-theme-bin
     maplemono-ttf
     adw-gtk-theme
+
+    # Optional
+    zed
+    helium-browser-bin
 )
 
 echo ":: Installing core packages..."

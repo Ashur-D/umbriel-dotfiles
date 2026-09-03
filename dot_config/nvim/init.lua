@@ -77,7 +77,7 @@ require("lazy").setup({
 -- =====================================================================
 -- 3. Cool Built-in Tweaks
 -- =====================================================================
--- Flash text briefly when you copy (yank) it
+-- Flash text briefly when you copy it
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("HighlightYank", {}),
     callback = function()
