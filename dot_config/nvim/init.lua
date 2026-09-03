@@ -72,6 +72,51 @@ require("lazy").setup({
             end
         end
     },
+
+    -- Noctalia Colorscheme (Base16 / Matugen)
+    {
+        "RRethy/base16-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            local function make_transparent()
+                local groups = {
+                    "Normal",
+                    "NormalNC",
+                    "NormalFloat",
+                    "FloatBorder",
+                    "SignColumn",
+                    "FoldColumn",
+                    "LineNr",
+                    "CursorLineNr",
+                    "EndOfBuffer",
+                }
+                for _, group in ipairs(groups) do
+                    vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+                end
+            end
+
+            -- Ensure base16 setup preserves transparency even when reloaded via SIGUSR1
+            local ok_base16, base16 = pcall(require, "base16-colorscheme")
+            if ok_base16 then
+                local orig_setup = base16.setup
+                base16.setup = function(colors, config)
+                    orig_setup(colors, config)
+                    make_transparent()
+                end
+            end
+
+            local ok_matugen, matugen = pcall(require, "matugen")
+            if ok_matugen then
+                matugen.setup()
+            end
+            make_transparent()
+
+            vim.api.nvim_create_autocmd({ "ColorScheme", "UIEnter" }, {
+                callback = make_transparent,
+            })
+        end,
+    },
 })
 
 -- =====================================================================

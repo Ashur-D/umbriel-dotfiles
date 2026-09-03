@@ -21,6 +21,7 @@ fi
 CORE_PACKAGES=(
     # Compositor & Desktop Shell
     xdg-desktop-portal-umbriel-git
+    xwayland-satellite
     umbriel-git
     noctalia
 
@@ -46,6 +47,7 @@ CORE_PACKAGES=(
     iwd
 
     # Capture, Fonts & GTK
+    wl-clipboard
     satty
     gpu-screen-recorder
     bibata-cursor-theme-bin

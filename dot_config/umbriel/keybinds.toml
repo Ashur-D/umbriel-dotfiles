@@ -63,10 +63,10 @@
 
 # ---------------- Media ----------------
 "XF86AudioMute" = "spawn:noctalia msg volume-mute"
-"XF86AudioPlay" = "spawn:playerctl play-pause"
-"XF86AudioNext" = "spawn:playerctl next"
-"XF86AudioPrev" = "spawn:playerctl previous"
-"XF86AudioStop" = "spawn:playerctl stop"
+"XF86AudioPlay" = "spawn:playerctl --ignore-player=chromium,firefox play-pause"
+"XF86AudioNext" = "spawn:playerctl --ignore-player=chromium,firefox next"
+"XF86AudioPrev" = "spawn:playerctl --ignore-player=chromium,firefox previous"
+"XF86AudioStop" = "spawn:playerctl --ignore-player=chromium,firefox stop"
 
 # ---------------- Scratchpad (Special Workspace) ----------------
 "Mod+A" = "scratchpad-toggle"
@@ -76,4 +76,4 @@
 
 # ---------------- Overview & Layout ----------------
 "Mod+S" = "overview-toggle"
-# "Mod+Shift+T" =
+"Mod+Shift+T" = 'spawn:umbriel msg workspace-set-layout:toggle && noctalia msg notification-show "Workspace Layout" "Switched to $(umbriel workspaces | grep "(focused)" | tr -d "[]*" | awk "{print \$3}")"'
