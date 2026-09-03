@@ -2,22 +2,22 @@
 middle_click_paste = false
 
 [input.keyboard]
-repeat_rate = 25  # 0-1000 Hz, 0 disables
-repeat_delay = 600 # 0-10000 ms
+repeat_rate = 25
+repeat_delay = 600
 
 [input.mouse]
 natural_scroll = false
 accel_profile = "flat"
-sensitivity = 0.0              # pointer speed, -1.0 to 1.0
-scroll_wheel_step = 60         # 1-1000
+sensitivity = 0.0
+scroll_wheel_step = 60
 
 [input.cursor]
-theme = "Bibata-Modern-Classic"   # empty = environment/default Xcursor theme
+theme = "Bibata-Modern-Classic"
 size = 24    # 1-512
 hardware_cursor = true
 follows_focus = true
 hide_when_typing = false
-hide_timeout_ms = 0  # 0-3600000, 0 disables hiding
+hide_timeout_ms = 0
 
 [input.focus]
 follows_mouse = true

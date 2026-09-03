@@ -5,12 +5,11 @@
 autostart = [
   "noctalia",
   "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE",
-  "systemctl --user start hyprpolkitagent",
 ]
-mod_key = "Alt"            # Mod in keybinds; defaults to Super (Alt when nested)
+mod_key = "Alt"
 xwayland = true
 show_cheatsheet = true
-focus_on_activate = false         # overridden: Hyprland had focus_on_activate = true
+focus_on_activate = false
 honor_restored_maximize = false
 
 [environment]
@@ -22,3 +21,5 @@ SDL_VIDEODRIVER = "wayland"
 MOZ_ENABLE_WAYLAND = "1"
 ELECTRON_OZONE_PLATFORM_HINT = "auto"
 OZONE_PLATFORM = "wayland"
+LIBVA_DRIVER_NAME = "nvidia"
+__GLX_VENDOR_LIBRARY_NAME = "nvidia"

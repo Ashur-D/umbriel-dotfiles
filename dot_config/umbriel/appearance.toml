@@ -62,7 +62,7 @@ dim = 0.0
 
 [appearance]
 prefer_no_csd = true
-border_width = 3
+border_width = 0
 outer_border_width = 0
 corner_radius = 16
 drag_opacity = 0.75
@@ -73,13 +73,12 @@ optimized = true
 passes = 2
 radius = 2
 noise = 0.02
-brightness = 0.9
-contrast = 0.9
-saturation = 1.1
+# brightness = 0.9
+# contrast = 0.9
+# saturation = 1.1
 
 [appearance.shadow]
 enabled = false
 softness = 2
 offset_x = 0
 offset_y = 0
-# color = "#0000007F"
