@@ -27,11 +27,10 @@ PACKAGES=(
     pipewire pipewire-pulse wireplumber playerctl power-profiles-daemon
 
     # Networking & Bluetooth
-    bluez iwd impala
+    bluez iwd
 
     # Capture, Fonts & GTK
-    wl-clipboard satty gpu-screen-recorder imagemagick
-    bibata-cursor-theme-bin maplemono-ttf adw-gtk-theme nwg-look
+    wl-clipboard satty gpu-screen-recorder bibata-cursor-theme-bin maplemono-ttf adw-gtk-theme
 )
 
 echo ":: Installing all packages..."

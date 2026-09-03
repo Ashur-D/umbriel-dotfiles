@@ -33,10 +33,10 @@ function gc() {
 }
 
 ###------------------- hyprland auto start -----------------------###
-alias hyprland='start-hyprland'
+alias umbriel='start-umbriel'
 
 if [ "$(tty)" = "/dev/tty1" ]; then
-  exec start-hyprland
+  exec start-umbriel
 fi
 
 ###------------------- shell wrapper -----------------------###
