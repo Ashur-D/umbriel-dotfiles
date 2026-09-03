@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Uninstall Packages
 Comment=Interactive package uninstaller and cleanup
-Exec=kitty --title "Uninstall Packages" -e app-remove
+Exec=kitty --override font_size=12 --override window_padding_width=18 --override window_padding_height=18 --title "Uninstall Packages" -e app-remove
 Icon=system-software-update
 Terminal=false
 Type=Application

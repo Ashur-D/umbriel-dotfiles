@@ -7,15 +7,11 @@ if ! command -v gum &>/dev/null; then
     sudo pacman -S --needed --noconfirm gum
 fi
 
-clear
-gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "📦 Optional Software Installer"
-
 OPTIONAL_LIST=(
     "─── [ DAILY DESKTOP APPS ] ─────────────────────────"
     "zen-browser-bin             Fast, privacy-focused browser"
     "helium-browser-bin          Minimal lightweight browser"
     "vesktop-bin                 Discord client with Wayland screenshare & Vencord"
-    "Discord                     The official discord from the AUR"
     "obsidian                    Markdown knowledge base & notes"
     "localsend                   Local cross-platform file sharing"
     "fastpotify-bin              Spotify TUI client"
@@ -54,6 +50,7 @@ OPTIONAL_LIST=(
     "nwg-look                    GTK3/4 settings and theme editor"
     "mpv                         High-performance media & video player"
     "imv                         Fast image viewer for Wayland"
+    "python-gobject              Python GObject bindings (GTK / power-profiles)"
     ""
     "─── [ TERMINAL RICE & VISUALS ] ────────────────────"
     "cbonsai                     Bonsai tree generator in terminal"
@@ -67,10 +64,9 @@ OPTIONAL_LIST=(
     "asciinema                   Terminal session recorder and sharer"
 )
 
-echo "Select packages to install (SPACE/TAB to select, ENTER to confirm, ESC to exit):"
-echo ""
+HEADER_TEXT="📦 Optional Software Installer  |  SPACE: select  |  ENTER: confirm  |  ESC: exit"
 
-SELECTED_ITEMS=$(printf "%s\n" "${OPTIONAL_LIST[@]}" | gum choose --no-limit --height 24 || true)
+SELECTED_ITEMS=$(printf "%s\n" "${OPTIONAL_LIST[@]}" | gum choose --no-limit --height 18 --header "$HEADER_TEXT" || true)
 
 if [ -z "$SELECTED_ITEMS" ]; then
     gum style --foreground 212 "No packages selected. Exiting."
@@ -81,7 +77,6 @@ fi
 PKGS_TO_INSTALL=()
 while IFS= read -r line; do
     [ -z "$line" ] && continue
-    # Skip section header lines
     if [[ "$line" =~ ^─── ]]; then
         continue
     fi

@@ -1,8 +1,7 @@
 # Umbriel window and layer rules
 # Converted from Hyprland config
 
-# Note: Hyprland's "suppress_event = max" and tag system have no Umbriel equivalent.
-# Default opacity for all windows (was tag = "+default-opacity" with opacity = "0.97 0.9")
+# Default opacity for all windows
 [[window_rule]]
 match.app_id = ".*"
 opacity = 0.97
@@ -28,9 +27,6 @@ match.app_id = "^steam$"
 match.title = "^Friends List$"
 default_size = [460, 800]
 
-# Steam idle inhibit (no direct equivalent in Umbriel)
-# idle_inhibit = "fullscreen"
-
 # Satty
 [[window_rule]]
 match.app_id = "^com.gabm.satty$"
@@ -39,19 +35,15 @@ default_position = { x = 0, y = 0, anchor = "center" }
 default_pinned = true
 default_size = [460, 800]
 
-# Noctalia
+# File dialogs / Save / Open
 [[window_rule]]
-match.app_id = "^dev.noctalia.Noctalia$"
+match.title = "^(Open File|Select|Choose a wallpaper|Open Folder|Save As|Library|Choose Where to Download|File Operation Progress|Rename|Copy Files|Move Files|Search Files)$"
 default_floating = true
-default_size = [1080, 920]
 
-# XWayland drag fix (no_focus not supported in Umbriel)
-# [[window_rule]]
-# match.app_id = "^$"
-# match.title = "^$"
-# xwayland = true
-# default_floating = true
-# default_focused = false
+# Discord / Vesktop
+[[window_rule]]
+match.app_id = "^(vesktop|discord)$"
+opacity = 1.0
 
 # Layer rules (Noctalia layer surfaces)
 [[layer_rule]]
@@ -60,9 +52,10 @@ blur = true
 blur_ignore_alpha = 0.5
 blur_popups = true
 
-# Floating rules for interactive installer/uninstaller popups
+# Floating rules for interactive installer/uninstaller popups (Overlay & Pinned)
 [[window_rule]]
 match.title = "^(Install Optional Apps|Uninstall Packages)$"
 default_floating = true
-default_size = [880, 620]
+default_pinned = true
+default_size = [980, 680]
 default_position = { x = 0, y = 0, anchor = "center" }
