@@ -9,7 +9,7 @@
 "Mod+Escape" = "spawn:noctalia msg panel-toggle control-center"
 "Mod+Shift+Escape" = "spawn:noctalia msg panel-toggle session"
 "Print" = "spawn:noctalia msg screenshot-region"
-"Alt+Tab" = "spawn:noctalia msg window-switcher"
+# "Alt+Tab" = "spawn:noctalia msg window-switcher"
 
 # ---------------- Recording & Nightlight ----------------
 "Mod+Shift+R" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all toggle"
@@ -28,8 +28,10 @@
 "Mod+Down" = "window-focus-down"
 
 # ---------------- Swap active windows ----------------
-"Mod+Shift+Left" = "window-swap-previous"
+"Mod+Shift+Left"  = "window-swap-previous"
 "Mod+Shift+Right" = "window-swap-next"
+"Mod+Shift+Up"    = "window-move-up"
+"Mod+Shift+Down"  = "window-move-down"
 
 # ---------------- Resize active window ----------------
 "Mod+Minus" = "window-modify-width:-0.1"
@@ -75,4 +77,3 @@
 # ---------------- Overview & Layout ----------------
 "Mod+O" = "overview-toggle"
 "Mod+Shift+T" = "spawn:/home/ash/.config/scripts/toggle-layout.sh"
-
