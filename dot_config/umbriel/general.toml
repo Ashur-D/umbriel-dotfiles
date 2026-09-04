@@ -1,6 +1,3 @@
-# Umbriel general settings
-# Includes converted values from Hyprland config
-
 [general]
 autostart = [
   "noctalia",

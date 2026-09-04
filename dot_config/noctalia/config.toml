@@ -1,4 +1,6 @@
-[Bar]
+config_version = 14
+
+[bar]
 order = [ "main" ]
 
     [bar.main]
@@ -31,8 +33,6 @@ order = [ "main" ]
         padding = 18.0
 
         [[bar.main.capsule_group]]
-        accordion = true
-        accordion_direction = "end"
         border = ""
         enabled = true
         fill = "surface_variant"
@@ -252,19 +252,24 @@ mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "soft"
 
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
+    community_ids = [ "antigravity", "discord", "steam", "yazi" ]
+    enable_community_templates = true
+
 [wallpaper]
 directory = "/home/ash/Pictures/wallpapers"
 directory_dark = "/home/ash/Pictures/wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ash/Pictures/wallpapers/wallpaper13.jpg"
+    path = "/home/ash/Pictures/wallpapers/wallpaper17.png"
 
     [wallpaper.last]
-    path = "/home/ash/Pictures/wallpapers/wallpaper13.jpg"
+    path = "/home/ash/Pictures/wallpapers/wallpaper17.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ash/Pictures/wallpapers/wallpaper13.jpg"
+    path = "/home/ash/Pictures/wallpapers/wallpaper17.png"
 
 [widget.clock]
 format = "{:L%A %I:%M}"
