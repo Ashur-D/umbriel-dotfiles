@@ -16,6 +16,16 @@ files = [
   "keybinds.toml",
   "rules.toml",
   "workspaces.toml",
-  # "monolith.toml",
+  # --------------------------------------------------------------------------
+  # Animation Profiles (Uncomment the one you want to try!)
+  # --------------------------------------------------------------------------
+  "animations/original.toml",      # Your original configuration (Currently Active)
+  # "animations/snappy.toml",      # Fast, modern, energetic (Hyprland feel)
+  # "animations/spring.toml",      # Apple/macOS spring physics momentum
+  # "animations/bouncy.toml",      # Playful rubber-band elasticity
+  # "animations/minimal.toml",     # 120ms competitive speedrun
+  # "animations/gentle.toml",      # Luxurious, cinematic slow glide (500ms)
+  # "animations/expressive.toml",  # Material You / Android 14 motion
+  # "animations/glide.toml",       # Horizontal momentum slide,
   "noctalia.toml",
 ]

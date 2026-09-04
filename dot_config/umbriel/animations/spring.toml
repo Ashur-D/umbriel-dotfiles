@@ -1,0 +1,47 @@
+# ============================================================================
+# ANIMATION PRESET: Spring (macOS / Apple Physics Momentum)
+# Vibe: Natural weighted physics, organic zoom-in, soft spring bounce
+# ============================================================================
+
+[animation.springs]
+appleSpring = { damping = 0.85, stiffness = 180 }
+stiffSpring = { damping = 1.0, stiffness = 320 }
+
+[animation]
+enabled = true
+duration_ms = 300
+curve = "appleSpring"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 320
+curve = "appleSpring"
+style = "zoom"
+
+[animation.windows_out]
+enabled = true
+duration_ms = 200
+curve = "stiffSpring"
+style = "fade"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 320
+curve = "appleSpring"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 320
+curve = "appleSpring"
+
+[animation.overview]
+enabled = true
+duration_ms = 280
+curve = "appleSpring"
+
+[animation.scratchpad]
+enabled = true
+duration_ms = 300
+curve = "appleSpring"
+dim = 0.4
+scale = 0.9

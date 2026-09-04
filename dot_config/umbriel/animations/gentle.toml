@@ -1,0 +1,47 @@
+# ============================================================================
+# ANIMATION PRESET: Gentle (Cinematic Slow Glide)
+# Vibe: Luxurious, smooth, slow deceleration (500ms)
+# ============================================================================
+
+[animation.beziers]
+gentleGlide = [0.0, 0.0, 0.2, 1.0]
+smoothDecel = [0.05, 0.7, 0.1, 1.0]
+
+[animation]
+enabled = true
+duration_ms = 500
+curve = "gentleGlide"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 550
+curve = "smoothDecel"
+style = "zoom"
+
+[animation.windows_out]
+enabled = true
+duration_ms = 350
+curve = "gentleGlide"
+style = "fade"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 550
+curve = "smoothDecel"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 550
+curve = "gentleGlide"
+
+[animation.overview]
+enabled = true
+duration_ms = 450
+curve = "smoothDecel"
+
+[animation.scratchpad]
+enabled = true
+duration_ms = 500
+curve = "smoothDecel"
+dim = 0.35
+scale = 0.95

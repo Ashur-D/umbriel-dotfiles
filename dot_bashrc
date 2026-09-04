@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
-export PATH="$HOME/.local/bin:$PATH"
-
 ###------------------- Editor used by CLI -----------------------###
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"

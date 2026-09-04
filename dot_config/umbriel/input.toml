@@ -13,7 +13,7 @@ scroll_wheel_step = 60
 
 [input.cursor]
 theme = "Bibata-Modern-Classic"
-size = 24    # 1-512
+size = 24
 hardware_cursor = true
 follows_focus = true
 hide_when_typing = false
@@ -21,4 +21,3 @@ hide_timeout_ms = 0
 
 [input.focus]
 follows_mouse = true
-# follows_mouse_max_scroll = 0.5  # optional, measured in viewport widths

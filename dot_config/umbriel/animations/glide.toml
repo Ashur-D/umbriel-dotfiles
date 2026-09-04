@@ -1,0 +1,45 @@
+# ============================================================================
+# ANIMATION PRESET: Glide (Horizontal Momentum Slide)
+# Vibe: Windows slide into place rather than popping up
+# ============================================================================
+
+[animation.beziers]
+driftEase = [0.2, 0.8, 0.2, 1.0]
+
+[animation]
+enabled = true
+duration_ms = 320
+curve = "driftEase"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 300
+curve = "driftEase"
+style = "slide"
+
+[animation.windows_out]
+enabled = true
+duration_ms = 240
+curve = "driftEase"
+style = "slide"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 320
+curve = "driftEase"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 320
+curve = "driftEase"
+
+[animation.overview]
+enabled = true
+duration_ms = 280
+curve = "driftEase"
+
+[animation.scratchpad]
+enabled = true
+duration_ms = 300
+curve = "driftEase"
+dim = 0.3

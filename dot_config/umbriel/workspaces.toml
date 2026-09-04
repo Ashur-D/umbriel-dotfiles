@@ -1,5 +1,5 @@
 [workspaces]
-back_and_forth = false
+back_and_forth = true
 empty_above = false
 
 [output.DP-1]
@@ -8,18 +8,17 @@ position = [0, 0]
 scale = 1
 
 [layout]
-mode = "dwindle"        # "scrolling", "dwindle", or "master"
+mode = "dwindle"
 gap = 5
-# width_presets = [0.333, 0.5, 0.667]
+
+[layout.dwindle]
+preserve_split = true
 
 [layout.scrolling]
 default_width_fraction = 0.5
 center_underfull_strip = true
 center_focused = false
 expand_single_column = true
-
-[layout.dwindle]
-preserve_split = true
 
 [layout.master]
 position = "left"

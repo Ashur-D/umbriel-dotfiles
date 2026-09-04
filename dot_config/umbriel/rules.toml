@@ -1,61 +1,62 @@
-# Umbriel window and layer rules
-# Converted from Hyprland config
-
-# Default opacity for all windows
+# ----------------------------------------------------------------------------
+# All window rules
+# ----------------------------------------------------------------------------
 [[window_rule]]
 match.app_id = ".*"
 opacity = 0.97
+# blur = true
+# blur_optimized = true
 
-# Float Steam
+# ----------------------------------------------------------------------------
+# Steam Rules
+# ----------------------------------------------------------------------------
+# All Steam windows: always floating and 100% opaque (no blur/transparency artifacts)
 [[window_rule]]
-match.app_id = "^steam$"
+match.app_id = "^steam.*$"
 default_floating = true
+opacity = 1.0
 
+# Main Steam client window size & placement
 [[window_rule]]
 match.app_id = "^steam$"
 match.title = "^Steam$"
-default_floating = true
 default_size = [1100, 700]
 default_position = { x = 0, y = 0, anchor = "center" }
 
-[[window_rule]]
-match.app_id = "^steam.*$"
-opacity = 1.0
-
+# Steam Friends list size
 [[window_rule]]
 match.app_id = "^steam$"
 match.title = "^Friends List$"
 default_size = [460, 800]
 
-# Satty
-[[window_rule]]
-match.app_id = "^com.gabm.satty$"
-default_floating = true
-default_position = { x = 0, y = 0, anchor = "center" }
-default_pinned = true
-default_size = [460, 800]
-
-# File dialogs / Save / Open
+# ----------------------------------------------------------------------------
+# Dialogs & Utilities
+# ----------------------------------------------------------------------------
+# File pickers & transfer dialogs
 [[window_rule]]
 match.title = "^(Open File|Select|Choose a wallpaper|Open Folder|Save As|Library|Choose Where to Download|File Operation Progress|Rename|Copy Files|Move Files|Search Files)$"
 default_floating = true
 
-# Discord / Vesktop
+# Satty (Screenshot annotation)
 [[window_rule]]
-match.app_id = "^(vesktop|discord)$"
-opacity = 1.0
+match.app_id = "^com.gabm.satty$"
+default_floating = true
+default_pinned = true
+default_size = [460, 800]
+default_position = { x = 0, y = 0, anchor = "center" }
 
-# Layer rules (Noctalia layer surfaces)
+# ----------------------------------------------------------------------------
+# Desktop Shell (Noctalia)
+# ----------------------------------------------------------------------------
+# Blur all Noctalia bars, panels, notifications, and popups
 [[layer_rule]]
-match.namespace = "^noctalia-(bar-[^\"+]|notification|dock|panel|attached-panel|osd|window-switcher)$"
+match.namespace = "^noctalia-.*"
 blur = true
 blur_ignore_alpha = 0.5
 blur_popups = true
 
-# Floating rules for interactive installer/uninstaller popups (Overlay & Pinned)
-[[window_rule]]
-match.title = "^(Install Optional Apps|Uninstall Packages)$"
-default_floating = true
-default_pinned = true
-default_size = [980, 680]
-default_position = { x = 0, y = 0, anchor = "center" }
+
+# [[window_rule]]
+# match.app_id = "^(kitty)$"
+# blur = true
+# blur_optimized = true

@@ -1,79 +1,122 @@
 [keybinds]
 
+# ============================================================================
+# Applications & Launchers
+# ============================================================================
 "Mod+Return" = "spawn:kitty"
-"Mod+E" = "spawn:kitty -e yazi"
+"Mod+E"      = "spawn:kitty -e yazi"
 
-# ---------------- Noctalia & Menus ----------------
-"Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
-"Mod+V" = "spawn:noctalia msg panel-toggle clipboard"
-"Mod+Escape" = "spawn:noctalia msg panel-toggle control-center"
+# ============================================================================
+# Noctalia Shell & System Panels
+# ============================================================================
+"Mod+Space"        = "spawn:noctalia msg panel-toggle launcher"
+"Mod+V"            = "spawn:noctalia msg panel-toggle clipboard"
+"Mod+Escape"       = "spawn:noctalia msg panel-toggle control-center"
 "Mod+Shift+Escape" = "spawn:noctalia msg panel-toggle session"
-"Print" = "spawn:noctalia msg screenshot-region"
-# "Alt+Tab" = "spawn:noctalia msg window-switcher"
+"Mod+Shift+W"      = "spawn:noctalia msg wallpaper-random"
+"Mod+Shift+N"      = "spawn:noctalia msg nightlight-toggle"
+"Mod+Shift+R"      = "spawn:noctalia msg plugin noctalia/screen_recorder:service all toggle"
 
-# ---------------- Recording & Nightlight ----------------
-"Mod+Shift+R" = "spawn:noctalia msg plugin noctalia/screen_recorder:service all toggle"
-"Mod+Ctrl+N" = "spawn:noctalia msg nightlight toggle"
+# ============================================================================
+# Screenshots
+# ============================================================================
+"Print"       = "spawn:noctalia msg screenshot-region"
+"Shift+Print" = "spawn:noctalia msg screenshot-fullscreen"
 
-# ---------------- Window controls ----------------
-"Mod+W" = "window-close"
-"Mod+T" = "window-toggle-floating"
-"Mod+F" = "window-toggle-fullscreen"
-"Mod+Alt+F" = "window-toggle-maximize"
+# ============================================================================
+# Window States & Actions
+# ============================================================================
+"Mod+W"      = "window-close"
+"Mod+T"      = "window-toggle-floating"
+"Mod+F"      = "window-toggle-fullscreen"
+"Mod+Alt+F"  = "window-toggle-maximize"
+"Mod+M"      = "window-toggle-maximize-to-edges"
+"Mod+P"      = "window-toggle-pinned"
+"Mod+Ctrl+C" = "window-center"
 
-# ---------------- Move window focus ----------------
-"Mod+Left" = "window-focus-left"
-"Mod+Right" = "window-focus-right"
-"Mod+Up" = "window-focus-up"
-"Mod+Down" = "window-focus-down"
+# ============================================================================
+# Window Focus & Navigation
+# ============================================================================
+"Mod+Left"        = "window-focus-left"
+"Mod+Right"       = "window-focus-right"
+"Mod+Up"          = "window-focus-up"
+"Mod+Down"        = "window-focus-down"
+"Mod+Shift+Space" = "window-focus-switch-floating"
 
-# ---------------- Swap active windows ----------------
+# ============================================================================
+# Window Swapping & Movement
+# ============================================================================
 "Mod+Shift+Left"  = "window-swap-previous"
 "Mod+Shift+Right" = "window-swap-next"
 "Mod+Shift+Up"    = "window-move-up"
 "Mod+Shift+Down"  = "window-move-down"
 
-# ---------------- Resize active window ----------------
-"Mod+Minus" = "window-modify-width:-0.1"
-"Mod+Equal" = "window-modify-width:0.1"
+# ============================================================================
+# Window Resizing
+# ============================================================================
+"Mod+Minus"       = "window-modify-width:-0.1"
+"Mod+Equal"       = "window-modify-width:0.1"
 "Mod+Shift+Minus" = "window-modify-height:-0.1"
 "Mod+Shift+Equal" = "window-modify-height:0.1"
 
-# ---------------- Workspaces 1-10 ----------------
-"Mod+1" = "workspace-switch:1"
+# ============================================================================
+# Workspaces (1 - 10)
+# ============================================================================
+"Mod+1"       = "workspace-switch:1"
 "Mod+Shift+1" = "window-move-to-workspace:1"
-"Mod+2" = "workspace-switch:2"
+"Mod+2"       = "workspace-switch:2"
 "Mod+Shift+2" = "window-move-to-workspace:2"
-"Mod+3" = "workspace-switch:3"
+"Mod+3"       = "workspace-switch:3"
 "Mod+Shift+3" = "window-move-to-workspace:3"
-"Mod+4" = "workspace-switch:4"
+"Mod+4"       = "workspace-switch:4"
 "Mod+Shift+4" = "window-move-to-workspace:4"
-"Mod+5" = "workspace-switch:5"
+"Mod+5"       = "workspace-switch:5"
 "Mod+Shift+5" = "window-move-to-workspace:5"
-"Mod+6" = "workspace-switch:6"
+"Mod+6"       = "workspace-switch:6"
 "Mod+Shift+6" = "window-move-to-workspace:6"
-"Mod+7" = "workspace-switch:7"
+"Mod+7"       = "workspace-switch:7"
 "Mod+Shift+7" = "window-move-to-workspace:7"
-"Mod+8" = "workspace-switch:8"
+"Mod+8"       = "workspace-switch:8"
 "Mod+Shift+8" = "window-move-to-workspace:8"
-"Mod+9" = "workspace-switch:9"
+"Mod+9"       = "workspace-switch:9"
 "Mod+Shift+9" = "window-move-to-workspace:9"
-"Mod+0" = "workspace-switch:10"
+"Mod+0"       = "workspace-switch:10"
 "Mod+Shift+0" = "window-move-to-workspace:10"
 
-# ---------------- Media ----------------
+# ============================================================================
+# Workspace Cycling (Mouse Wheel)
+# ============================================================================
+"Mod+WheelDown"       = "workspace-next"
+"Mod+WheelUp"         = "workspace-previous"
+# Drag the focused window with you as you scroll:
+"Mod+Shift+WheelDown" = "window-move-to-workspace-next"
+"Mod+Shift+WheelUp"   = "window-move-to-workspace-previous"
+
+# ============================================================================
+# Scratchpad
+# ============================================================================
+"Mod+S"       = "scratchpad-toggle"
+"Mod+Shift+S" = "window-toggle-scratchpad"
+"Mod+Tab"     = "scratchpad-focus-next"
+# "Mod+Ctrl+S" = "window-restore-from-scratchpad"
+
+# ============================================================================
+# Overview & Layout
+# ============================================================================
+"Mod+A"       = "overview-toggle"
+"Mod+Shift+T" = 'spawn:umbriel msg workspace-set-layout:toggle && noctalia msg notification-show "Workspace Layout" "Switched to $(umbriel workspaces | grep "(focused)" | tr -d "[]*" | awk "{print \$3}")"'
+
+# ============================================================================
+# Media & Audio
+# ============================================================================
 "XF86AudioMute" = "spawn:noctalia msg volume-mute"
 "XF86AudioPlay" = "spawn:playerctl --ignore-player=chromium,firefox play-pause"
 "XF86AudioNext" = "spawn:playerctl --ignore-player=chromium,firefox next"
 "XF86AudioPrev" = "spawn:playerctl --ignore-player=chromium,firefox previous"
 "XF86AudioStop" = "spawn:playerctl --ignore-player=chromium,firefox stop"
 
-# ---------------- Scratchpad (Special Workspace) ----------------
-"Mod+A" = "scratchpad-toggle"
-"Mod+Shift+Space" = "window-move-to-scratchpad"
-"Mod+Ctrl+Space" = "window-restore-from-scratchpad"
-"Mod+Tab" = "scratchpad-focus-next"
-
-# ---------------- Overview & Layout ----------------
-"Mod+S" = "overview-toggle"
-"Mod+Shift+T" = 'spawn:umbriel msg workspace-set-layout:toggle && noctalia msg notification-show "Workspace Layout" "Switched to $(umbriel workspaces | grep "(focused)" | tr -d "[]*" | awk "{print \$3}")"'
+# ============================================================================
+# System & Configuration
+# ============================================================================
+"Mod+K"            = "cheatsheet-toggle"
+"Mod+Ctrl+Shift+R" = 'spawn:umbriel msg config-reload && noctalia msg notification-show "Umbriel" "Config Reloaded"'

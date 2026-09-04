@@ -1,0 +1,62 @@
+# ============================================================================
+# ANIMATION PRESET: Original (Your Custom Setup)
+# Vibe: Breezy, relaxed, cinematic pacing
+# ============================================================================
+
+[animation.beziers]
+wind   = [0.05, 0.9, 0.1, 1.05]
+winIn  = [0.1, 1.1, 0.1, 1.1]
+winOut = [0.3, -0.3, 0.0, 1.0]
+liner  = [1.0, 1.0, 1.0, 1.0]
+
+[animation]
+enabled = true
+duration_ms = 250
+curve = "easeout"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 600
+curve = "winOut"
+style = "popin"
+
+[animation.windows_out]
+enabled = true
+duration_ms = 600
+curve = "winOut"
+style = "slide"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 600
+curve = "wind"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 600
+curve = "wind"
+
+[animation.overview]
+enabled = true
+duration_ms = 600
+curve = "easeout"
+
+[animation.scratchpad]
+enabled = true
+duration_ms = 600
+curve = "wind"
+dim = 0.3
+scale = 0.0
+maximize = false
+fullscreen = false
+
+[animation.border]
+enabled = true
+duration_ms = 600
+curve = "liner"
+
+[animation.dim_unfocused]
+enabled = false
+duration_ms = 600
+curve = "easeout"
+dim = 0.0

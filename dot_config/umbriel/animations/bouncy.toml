@@ -1,0 +1,51 @@
+# ============================================================================
+# ANIMATION PRESET: Bouncy (Playful Rubber-Band Elasticity)
+# Vibe: Noticeable elastic bounce, expressive window open/move
+# ============================================================================
+
+[animation.beziers]
+elasticPop = [0.34, 1.56, 0.64, 1.0]
+winOut     = [0.3, -0.3, 0.0, 1.0]
+
+[animation.springs]
+bouncySpring = { damping = 0.55, stiffness = 220 }
+
+[animation]
+enabled = true
+duration_ms = 360
+curve = "bouncySpring"
+
+[animation.windows_in]
+enabled = true
+duration_ms = 380
+curve = "elasticPop"
+style = "popin"
+scale = 0.7
+
+[animation.windows_out]
+enabled = true
+duration_ms = 200
+curve = "winOut"
+style = "slide"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 380
+curve = "bouncySpring"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 360
+curve = "elasticPop"
+
+[animation.overview]
+enabled = true
+duration_ms = 300
+curve = "bouncySpring"
+
+[animation.scratchpad]
+enabled = true
+duration_ms = 350
+curve = "elasticPop"
+dim = 0.3
+scale = 0.8
