@@ -10,11 +10,11 @@
 | `zen-browser-bin` | Fast, privacy-focused browser |
 | `helium-browser-bin` | Minimal lightweight browser |
 | `vesktop-bin` | Discord client with Wayland screenshare & Vencord |
+| `discord` | Official Discord |
 | `obsidian` | Markdown knowledge base & notes |
 | `localsend` | Local cross-platform file sharing |
 | `fastpotify-bin` | Spotify client |
 | `antigravity` | AI coding assistant |
-| `noto-fonts-emoji` | Emoji font set |
 | `noto-fonts` | Noto font family |
 
 ### 🎮 Gaming
@@ -22,7 +22,6 @@
 | Package | Description |
 |---|---|
 | `steam` | Valve Steam game launcher |
-| `gamescope` | Micro-compositor for isolated gaming |
 | `proton-cachyos` | Optimized Proton compatibility tool |
 
 ### 💻 Development & Code
@@ -38,11 +37,10 @@
 | Package | Description |
 |---|---|
 | `eza` | Modern `ls` replacement with git status |
-| `fd` | Fast, user-friendly alternative to `find` |
 | `zoxide` | Smarter `cd` directory jumper |
 | `fzf` | General-purpose fuzzy finder |
-| `ripgrep-git` | Bleeding-edge ripgrep (git build) |
-| `fd-git` | Bleeding-edge fd (git build) |
+| `fd` | Fast, user-friendly alternative to `find` |
+| `ripgrep` | ripgrep |
 
 ### 🛠️ System Management & Utilities
 
@@ -51,12 +49,10 @@
 | `btop` | Modern resource & hardware monitor |
 | `bottom` | Graphical terminal process monitor |
 | `systemctl-tui` | TUI for managing systemd services |
-| `stacer-bin` | Linux system optimizer & GUI monitor |
 | `netsonar-bin` | Real-time network monitor |
 | `dust` | `du` disk usage visualizer in Rust |
 | `gdu` | Fast interactive disk usage analyzer |
 | `ncdu` | Classic ncurses disk analyzer |
-| `pachub` | Front-end for Pacman/AUR packages |
 | `efibootmgr` | Tool to modify UEFI boot entries |
 
 ### 🎨 Media & GTK Configuration

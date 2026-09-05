@@ -52,6 +52,8 @@ CORE_PACKAGES=(
     gpu-screen-recorder
     bibata-cursor-theme-bin
     maplemono-ttf
+    noto-fonts-emoji # or ttf-apple-emoji
+    noto-fonts
     adw-gtk-theme
 )
 
