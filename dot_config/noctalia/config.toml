@@ -15,7 +15,7 @@ order = [ "main" ]
     margin_edge = 5
     margin_ends = 5
     padding = 0
-    start = [ "group:g2" ]
+    start = [ "group:g2", "packages" ]
     thickness = 37
 
         [bar.main.dead_zone.actions]
@@ -211,7 +211,7 @@ hide_inactive = true
 video_source = "focused"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "cleboost/zed-provider" ]
+enabled = [ "noctalia/screen_recorder", "cleboost/zed-provider", "ashur-d/arch-packages" ]
 
     [[plugins.source]]
     kind = "git"
@@ -287,3 +287,7 @@ show_labels = false
 
     [widget.workspaces.actions]
     right = "wallpaper-random"
+
+[widget.packages]
+type = "ashur-d/arch-packages:widget"
+

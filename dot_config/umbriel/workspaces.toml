@@ -6,6 +6,8 @@ empty_above = false
 mode = "1920x1080@180"
 position = [0, 0]
 scale = 1
+min_workspaces = 3
+# workspaces = 5
 
 [layout]
 mode = "dwindle"
