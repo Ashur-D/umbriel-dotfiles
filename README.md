@@ -7,74 +7,67 @@
 
 | Package | Description |
 |---|---|
-| `zen-browser-bin` | Fast, privacy-focused browser |
-| `helium-browser-bin` | Minimal lightweight browser |
-| `vesktop-bin` | Discord client with Wayland screenshare & Vencord |
-| `discord` | Official Discord |
-| `obsidian` | Markdown knowledge base & notes |
-| `localsend` | Local cross-platform file sharing |
-| `fastpotify-bin` | Spotify client |
-| `antigravity` | AI coding assistant |
-| `noto-fonts` | Noto font family |
+| `helium-browser-bin` | Minimal, lightweight Chromium-based browser |
+| `vesktop-bin` | Discord client with native Wayland screenshare & Vencord |
+| `obsidian` | Markdown knowledge base & personal note-taking |
+| `localsend` | Cross-platform local network file sharing |
+| `fastpotify-bin` | Lightweight Spotify desktop client |
 
 ### 🎮 Gaming
 
 | Package | Description |
 |---|---|
-| `steam` | Valve Steam game launcher |
-| `proton-cachyos` | Optimized Proton compatibility tool |
+| `steam` | Valve Steam digital game launcher |
+| `proton-cachyos` | Performance-optimized Proton compatibility layer |
 
 ### 💻 Development & Code
 
 | Package | Description |
 |---|---|
-| `zed` | High-performance GUI code editor |
-| `lazygit` | Terminal UI for Git commands |
-| `openssh` | SSH client & server tools |
+| `zed` | High-performance, GPU-accelerated code editor |
+| `lazygit` | Simple and fast terminal UI for Git |
+| `git` | Fast, scalable distributed version control system |
+| `openssh` | Secure shell remote access & cryptographic tools |
 
 ### 🔍 Modern CLI & Navigation
 
 | Package | Description |
 |---|---|
-| `eza` | Modern `ls` replacement with git status |
-| `zoxide` | Smarter `cd` directory jumper |
-| `fzf` | General-purpose fuzzy finder |
+| `eza` | Modern `ls` alternative with colors, icons & Git status |
+| `zoxide` | Smarter, fast `cd` directory jumper tracking habits |
+| `fzf` | Interactive command-line fuzzy finder |
 | `fd` | Fast, user-friendly alternative to `find` |
-| `ripgrep` | ripgrep |
+| `ripgrep` | Blazing fast regex search tool replacing `grep` |
 
 ### 🛠️ System Management & Utilities
 
 | Package | Description |
 |---|---|
-| `btop` | Modern resource & hardware monitor |
-| `bottom` | Graphical terminal process monitor |
-| `systemctl-tui` | TUI for managing systemd services |
-| `netsonar-bin` | Real-time network monitor |
-| `dust` | `du` disk usage visualizer in Rust |
-| `gdu` | Fast interactive disk usage analyzer |
-| `ncdu` | Classic ncurses disk analyzer |
-| `efibootmgr` | Tool to modify UEFI boot entries |
+| `btop` | Modern hardware resource & process monitor |
+| `systemctl-tui` | Fast TUI for inspecting and controlling systemd units & logs |
+| `systemd-manager-tui` | Interactive TUI manager for systemd services |
+| `netsonar-bin` | Real-time terminal network traffic & packet monitor |
+| `gdu` | Fast interactive terminal disk usage analyzer |
+| `efibootmgr` | Tool to view and modify UEFI boot manager entries |
 
-### 🎨 Media & GTK Configuration
+### 🎨 Media & Viewers
 
 | Package | Description |
 |---|---|
-| `nwg-look` | GTK3/4 settings and theme editor |
-| `mpv` | High-performance media & video player |
-| `imv` | Fast image viewer for Wayland |
+| `mpv` | High-performance, scriptable media and video player |
+| `imv` | Fast, lightweight image viewer built for Wayland |
 
 ### 🌿 Terminal Rice & Visuals
 
 | Package | Description |
 |---|---|
-| `cbonsai` | Bonsai tree generator in terminal |
-| `catnap-git` | Fast aesthetic system fetch tool |
-| `weathr` | Terminal weather app with ASCII animation |
-| `stormy-bin` | Minimal weather forecast fetcher |
-| `terminaltexteffects` | Visual text animation effect engine |
-| `terminal-rain-lightning-git` | Matrix digital rain with lightning |
-| `scope-tui` | Audio oscilloscope & vectorscope in terminal |
-| `astroterm` | Planetarium simulator in terminal |
-| `asciinema` | Terminal session recorder and sharer |
+| `catnap-git` | Fast, minimal aesthetic system fetch tool |
+| `weathr` | Terminal weather forecast with live ASCII animations |
+| `stormy-bin` | Clean and minimal terminal weather fetcher |
+| `cbonsai` | Procedural bonsai tree generator in the terminal |
+| `terminal-rain-lightning-git` | Matrix digital rain effect with thunder and lightning |
+| `scope-tui` | Real-time audio oscilloscope & vectorscope in the terminal |
+| `astroterm` | Interactive night-sky planetarium simulator for CLI |
+| `asciinema` | Lightweight terminal session recorder and sharer |
 
 </details>

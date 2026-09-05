@@ -40,7 +40,7 @@ CORE_PACKAGES=(
     wireplumber
     playerctl
     power-profiles-daemon
-    python-gobject
+    python-gobject # needed for power-profiles
 
     # Networking & Bluetooth
     bluez
@@ -50,11 +50,11 @@ CORE_PACKAGES=(
     wl-clipboard
     satty
     gpu-screen-recorder
-    bibata-cursor-theme-bin
-    maplemono-ttf
+    bibata-cursor-theme-bin # cursor
+    maplemono-ttf # main font
     noto-fonts-emoji # or ttf-apple-emoji
-    noto-fonts
-    adw-gtk-theme
+    noto-fonts # font
+    adw-gtk-theme # gtk theme
 )
 
 echo ":: Installing core packages..."
