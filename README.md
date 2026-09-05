@@ -1,9 +1,9 @@
-# umbriel-dotfiles
-
 # 📦 App List
 
-<details open>
-<summary><strong>🌐 Daily Desktop Apps</strong></summary>
+<details>
+<summary><strong>View all packages</strong></summary>
+
+### 🌐 Daily Desktop Apps
 
 | Package | Description |
 |---|---|
@@ -12,18 +12,12 @@
 | `vesktop-bin` | Discord client with Wayland screenshare & Vencord |
 | `obsidian` | Markdown knowledge base & notes |
 | `localsend` | Local cross-platform file sharing |
-| `fastpotify-bin` | Spotify TUI client |
-| `thunar` | GTK graphical file manager |
+| `fastpotify-bin` | Spotify client |
 | `antigravity` | AI coding assistant |
 | `noto-fonts-emoji` | Emoji font set |
 | `noto-fonts` | Noto font family |
 
-</details>
-
----
-
-<details open>
-<summary><strong>🎮 Gaming</strong></summary>
+### 🎮 Gaming
 
 | Package | Description |
 |---|---|
@@ -31,26 +25,15 @@
 | `gamescope` | Micro-compositor for isolated gaming |
 | `proton-cachyos` | Optimized Proton compatibility tool |
 
-</details>
-
----
-
-<details open>
-<summary><strong>💻 Development & Code</strong></summary>
+### 💻 Development & Code
 
 | Package | Description |
 |---|---|
 | `zed` | High-performance GUI code editor |
 | `lazygit` | Terminal UI for Git commands |
-| `git` | Version control system |
 | `openssh` | SSH client & server tools |
 
-</details>
-
----
-
-<details open>
-<summary><strong>🔍 Modern CLI & Navigation</strong></summary>
+### 🔍 Modern CLI & Navigation
 
 | Package | Description |
 |---|---|
@@ -61,12 +44,7 @@
 | `ripgrep-git` | Bleeding-edge ripgrep (git build) |
 | `fd-git` | Bleeding-edge fd (git build) |
 
-</details>
-
----
-
-<details open>
-<summary><strong>🛠️ System Management & Utilities</strong></summary>
+### 🛠️ System Management & Utilities
 
 | Package | Description |
 |---|---|
@@ -81,12 +59,7 @@
 | `pachub` | Front-end for Pacman/AUR packages |
 | `efibootmgr` | Tool to modify UEFI boot entries |
 
-</details>
-
----
-
-<details open>
-<summary><strong>🎨 Media & GTK Configuration</strong></summary>
+### 🎨 Media & GTK Configuration
 
 | Package | Description |
 |---|---|
@@ -94,12 +67,7 @@
 | `mpv` | High-performance media & video player |
 | `imv` | Fast image viewer for Wayland |
 
-</details>
-
----
-
-<details open>
-<summary><strong>🌿 Terminal Rice & Visuals</strong></summary>
+### 🌿 Terminal Rice & Visuals
 
 | Package | Description |
 |---|---|
@@ -114,4 +82,3 @@
 | `asciinema` | Terminal session recorder and sharer |
 
 </details>
-

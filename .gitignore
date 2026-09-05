@@ -19,4 +19,3 @@ dot_config/nvim/lazy-lock.json
 # OS / tool specific
 .DS_Store
 Thumbs.db
-dot_config/zed/private_settings.json
