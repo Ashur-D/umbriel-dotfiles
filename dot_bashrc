@@ -13,16 +13,18 @@ alias f="fastfetch"
 alias ga='git add .'
 alias gp='git push'
 alias gpp='git pull'
+alias gcm='git commit -m "updated"'
 
 function gc() {
-    # Print a styled prompt: bold magenta prompt symbol and dim hint
-    printf "\033[1;35m? \033[1;37mCommit message\033[0m \033[2m(Esc/Enter with no text to abort)\033[0m: "
-    read -r -e MESSAGE
+    local msg="$*"
+    if [ -z "$msg" ]; then
+        read -r -e -p "Enter commit message: " msg
+    fi
 
-    if [ -n "$MESSAGE" ]; then
-        git commit -m "$MESSAGE"
+    if [ -n "$msg" ]; then
+        git commit -m "$msg"
     else
-        printf "\033[33mCommit aborted.\033[0m\n"
+        echo "Commit aborted."
     fi
 }
 
