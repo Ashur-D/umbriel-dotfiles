@@ -13,14 +13,16 @@ alias f="fastfetch"
 alias ga='git add .'
 alias gp='git push'
 alias gpp='git pull'
-alias gcm='git commit -m "updated"'
 
 function gc() {
-    MESSAGE=$(gum input --placeholder "Enter commit message..." --width 50)
+    # Print a styled prompt: bold magenta prompt symbol and dim hint
+    printf "\033[1;35m? \033[1;37mCommit message\033[0m \033[2m(Esc/Enter with no text to abort)\033[0m: "
+    read -r -e MESSAGE
+
     if [ -n "$MESSAGE" ]; then
         git commit -m "$MESSAGE"
     else
-        echo "Commit aborted."
+        printf "\033[33mCommit aborted.\033[0m\n"
     fi
 }
 
@@ -40,4 +42,5 @@ function y() {
   rm -f -- "$tmp"
 }
 
+# Created by `pipx` on 2026-09-06 02:49:31
 export PATH="$PATH:/home/ash/.local/bin"
