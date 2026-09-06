@@ -50,13 +50,14 @@ default_position = { x = 0, y = 0, anchor = "center" }
 # ----------------------------------------------------------------------------
 # Blur all Noctalia bars, panels, notifications, and popups
 [[layer_rule]]
-match.namespace = "^noctalia-.*"
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
 blur = true
 blur_ignore_alpha = 0.5
 blur_popups = true
 
-
-# [[window_rule]]
-# match.app_id = "^(kitty)$"
-# blur = true
-# blur_optimized = true
+# Noctalia Settings window: always float and center
+[[window_rule]]
+match.app_id = "^dev\\.noctalia\\.Noctalia$"
+default_floating = true
+default_size = [1280, 920]
+default_position = { x = 0, y = 0, anchor = "center" }

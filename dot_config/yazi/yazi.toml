@@ -21,3 +21,24 @@ prepend_previewers = [
     { url = "*.json", run = "rich-preview"}, # for json (.json) files
 #    { url = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
 ]
+
+[opener]
+image = [
+    { run = 'imv %s', orphan = true, desc = "View image with imv" },
+]
+video = [
+    { run = 'mpv %s', orphan = true, desc = "Play with mpv" },
+]
+audio = [
+    { run = 'mpv --no-video %s', orphan = true, desc = "Play audio with mpv" },
+]
+
+[open]
+prepend_rules = [
+    # Images -> imv
+    { mime = "image/*", use = "image" },
+
+    # Videos & Audio -> mpv
+    { mime = "video/*", use = "video" },
+    { mime = "audio/*", use = "audio" },
+]
