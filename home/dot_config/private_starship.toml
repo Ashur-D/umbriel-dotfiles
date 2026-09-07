@@ -1,33 +1,34 @@
 palette = "noctalia"
+add_newline = false
 
 format = """
-[](peach)\
+[](yellow)\
 $os\
 $username\
-[](bg:maroon fg:peach)\
+[](bg:blue fg:yellow)\
 $directory\
 ${custom.git_start}\
 ${custom.git_branch}\
 ${custom.git_end}\
 ${custom.nongit}\
-[ 󰭹 ](bg:mauve fg:crust)\
-[ ](fg:mauve)\
+[ 󰭟 ](bg:green fg:black)\
+[ ](fg:green)\
 $line_break\
 $character"""
 
 [username]
 show_always = true
-style_user = "bg:peach fg:crust bold"
-style_root = "bg:peach fg:crust bold"
+style_user = "bg:yellow fg:black bold"
+style_root = "bg:red fg:black bold"
 format = '[$user ]($style)'
 disabled = false
 
 [os]
-style = "bg:peach fg:crust"
+style = "bg:yellow fg:black"
 disabled = true
 
 [directory]
-style = "bg:maroon fg:crust bold"
+style = "bg:blue fg:black bold"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -41,28 +42,28 @@ truncation_symbol = "…/"
 [custom.nongit]
 when = "! git rev-parse --is-inside-work-tree 2>/dev/null"
 command = "echo -n ''"
-format = "[](fg:maroon bg:mauve)"
+format = "[](fg:blue bg:green)"
 
 [custom.git_start]
 when = "git rev-parse --is-inside-work-tree 2>/dev/null"
 command = "echo -n ''"
-format = "[](fg:maroon bg:teal)"
+format = "[](fg:blue bg:cyan)"
 
 [custom.git_branch]
 when = "git rev-parse --is-inside-work-tree 2>/dev/null"
 command = "branch=$(git branch --show-current 2>/dev/null || git rev-parse --short HEAD 2>/dev/null); status=$(git status --porcelain 2>/dev/null); [ -n \"$status\" ] && echo -n \" $branch !\" || echo -n \" $branch\""
-format = "[ $output ](bg:teal fg:crust bold)"
+format = "[ $output ](bg:cyan fg:black bold)"
 
 [custom.git_end]
 when = "git rev-parse --is-inside-work-tree 2>/dev/null"
 command = "echo -n ''"
-format = "[](fg:teal bg:mauve)"
+format = "[](fg:cyan bg:green)"
 
 [character]
 disabled = false
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
-vimcmd_symbol = "[❮](bold mauve)"
+vimcmd_symbol = "[❮](bold magenta)"
 
 # >>> NOCTALIA STARSHIP PALETTE >>>
 # Noctalia Starship Palette
@@ -70,40 +71,40 @@ vimcmd_symbol = "[❮](bold mauve)"
 
 [palettes.noctalia]
 # Standard colors
-blue      = "#a8c476"
-red       = "#ee864c"
-green     = "#d79875"
-yellow    = "#c9bd71"
-cyan      = "#dcd4a3"
-magenta   = "#deb7a1"
-white     = "#f3f2f2"
-black     = "#302721"
+blue      = "#7799bb"
+red       = "#fd4663"
+green     = "#88c4a6"
+yellow    = "#77bbbb"
+cyan      = "#aad4d4"
+magenta   = "#aad5bf"
+white     = "#f2f3f2"
+black     = "#213029"
 
 # Extended palette (Catppuccin-compatible names)
-rosewater = "#c9bd71"
-flamingo  = "#ee864c"
-pink      = "#deb7a1"
-mauve     = "#deb7a1"
-maroon    = "#ee864c"
-peach     = "#c9bd71"
-teal      = "#dcd4a3"
-sky       = "#dcd4a3"
-sapphire  = "#a8c476"
-lavender  = "#deb7a1"
+rosewater = "#77bbbb"
+flamingo  = "#fd4663"
+pink      = "#aad5bf"
+mauve     = "#aad5bf"
+maroon    = "#fd4663"
+peach     = "#77bbbb"
+teal      = "#aad4d4"
+sky       = "#aad4d4"
+sapphire  = "#7799bb"
+lavender  = "#aad5bf"
 
 # Text shades
-text      = "#f3f2f2"
-subtext1  = "#f3f2f2"
-subtext0  = "#716761"
+text      = "#f2f3f2"
+subtext1  = "#f2f3f2"
+subtext0  = "#5f6e67"
 
 # Surface shades
-overlay2  = "#716761"
-overlay1  = "#716761"
-overlay0  = "#302721"
-surface2  = "#302721"
-surface1  = "#302721"
-surface0  = "#231d1a"
-base      = "#231d1a"
-mantle    = "#231d1a"
-crust     = "#231d1a"
+overlay2  = "#5f6e67"
+overlay1  = "#5f6e67"
+overlay0  = "#213029"
+surface2  = "#213029"
+surface1  = "#213029"
+surface0  = "#1a231f"
+base      = "#1a231f"
+mantle    = "#1a231f"
+crust     = "#1a231f"
 # <<< NOCTALIA STARSHIP PALETTE <<<
