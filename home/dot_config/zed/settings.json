@@ -20,7 +20,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Dark",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Catppuccin Mocha (Blur) [Heavy]"
   },
 
   // --- UI Elements ---
@@ -56,7 +56,7 @@
     "button": false
   },
   "git_panel": {
-    "button": true
+    "button": false
   },
   "outline_panel": {
     "button": false
