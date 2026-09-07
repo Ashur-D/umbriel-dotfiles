@@ -57,5 +57,5 @@ CORE_PACKAGES=(
 )
 
 echo ":: Installing core packages..."
-yay -S --needed --noconfirm --mflags --nocheck "${CORE_PACKAGES[@]}"
+yay -S --needed --noconfirm --mflags="--nocheck" "${CORE_PACKAGES[@]}"
 echo ":: Core packages installed successfully."

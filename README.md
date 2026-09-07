@@ -1,4 +1,4 @@
-# 📦 Optional Personal Apps List
+# 📦 Optional Package List
 
 <details>
 <summary><strong>View all packages</strong></summary>

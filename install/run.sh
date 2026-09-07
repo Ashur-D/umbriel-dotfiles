@@ -20,6 +20,8 @@ echo ":: Starting installation. Log: $LOG_FILE"
 echo ":: Authenticating sudo..."
 sudo -v
 while true; do sudo -n true; sleep 50; kill -0 "$$" || exit; done 2>/dev/null &
+SUDO_LOOP_PID=$!
+trap 'kill -9 "$SUDO_LOOP_PID" 2>/dev/null || true' EXIT
 
 # Execute 3 stages in order
 "$SCRIPT_DIR/01-packages.sh"

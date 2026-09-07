@@ -8,7 +8,15 @@ INSTALLED_KERNELS=$(pacman -Qq | grep -E '^linux(-[a-z0-9]+)?$' | grep -v 'firmw
 
 if lspci 2>/dev/null | grep -Ei "vga|3d" | grep -qi "nvidia"; then
     echo ":: Nvidia GPU detected. Installing drivers and matching headers..."
-    NVIDIA_PKGS=(nvidia-dkms nvidia-utils lib32-nvidia-utils egl-wayland libva-nvidia-driver)
+    NVIDIA_PKGS=(nvidia-dkms nvidia-utils egl-wayland libva-nvidia-driver)
+
+    # Only include 32-bit driver if the user has [multilib] enabled
+    if grep -qE '^\[multilib\]' /etc/pacman.conf; then
+        NVIDIA_PKGS+=(lib32-nvidia-utils)
+    else
+        echo ":: Notice: [multilib] is disabled in /etc/pacman.conf. Skipping lib32-nvidia-utils (enable multilib if you play 32-bit/Steam games)."
+    fi
+
     for k in $INSTALLED_KERNELS; do
         NVIDIA_PKGS+=("${k}-headers")
     done

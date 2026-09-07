@@ -22,8 +22,10 @@ fi
 
 # 2. Install Yazi plugins (package.toml now in place)
 if command -v ya &>/dev/null; then
-    echo ":: Installing Yazi plugins from package.toml..."
+    echo ":: Installing/updating Yazi plugins from package.toml..."
     ya pkg install || true
+else
+    echo ":: ya CLI not found. Skipping Yazi plugin installation."
 fi
 
 # 3. Hide cluttered utility apps from launcher
@@ -46,11 +48,18 @@ for app in "${HIDDEN_APPS[@]}"; do
     fi
 done
 
+# Clone wallpapers
 echo ":: Fetching wallpapers into ~/Pictures..."
 if [ ! -d "$HOME/Pictures/wallpapers" ]; then
+    echo ":: Downloading wallpaper collection..."
     git clone --depth 1 https://github.com/Ashur-D/wallpapers.git "$HOME/Pictures/wallpapers-tmp"
     mv "$HOME/Pictures/wallpapers-tmp/wallpapers" "$HOME/Pictures/wallpapers"
     rm -rf "$HOME/Pictures/wallpapers-tmp"
+elif [ -d "$HOME/Pictures/wallpapers/.git" ]; then
+    echo ":: Wallpaper collection exists. Checking for updates..."
+    git -C "$HOME/Pictures/wallpapers" pull --ff-only 2>/dev/null || true
+else
+    echo ":: Wallpapers already present at ~/Pictures/wallpapers."
 fi
 
 echo ":: Dotfiles and post-install configuration complete."
