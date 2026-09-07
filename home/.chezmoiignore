@@ -4,6 +4,7 @@
 .config/yazi/flavors/**
 .config/nvim/lua/matugen*
 .config/nvim/lazy-lock.json
+.config/starship.toml
 
 # Cache, logs, and transient files
 **/.git/**
