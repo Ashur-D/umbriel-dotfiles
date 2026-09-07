@@ -38,6 +38,7 @@
 | `fzf` | Interactive command-line fuzzy finder |
 | `fd` | Fast, user-friendly alternative to `find` |
 | `ripgrep` | Blazing fast regex search tool replacing `grep` |
+| `7zip` | used for zipping and unzipping files in yazi |
 
 ### 🛠️ System Management & Utilities
 
@@ -56,6 +57,7 @@
 |---|---|
 | `mpv` | High-performance, scriptable media and video player |
 | `imv` | Fast, lightweight image viewer built for Wayland |
+| `stremio` | hub for video content aggregation
 
 ### 🌿 Terminal Rice & Visuals
 
