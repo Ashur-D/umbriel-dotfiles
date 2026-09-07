@@ -88,22 +88,25 @@
 # ============================================================================
 "Mod+WheelDown"       = "workspace-next"
 "Mod+WheelUp"         = "workspace-previous"
-# Drag the focused window with you as you scroll:
 "Mod+Shift+WheelDown" = "window-move-to-workspace-next"
 "Mod+Shift+WheelUp"   = "window-move-to-workspace-previous"
 
 # ============================================================================
-# Scratchpad
+# Scratchpad Keybinds
 # ============================================================================
-"Mod+S"       = "scratchpad-toggle"
-"Mod+Shift+S" = "window-toggle-scratchpad"
-"Mod+Tab"     = "scratchpad-focus-next"
-# "Mod+Ctrl+S" = "window-restore-from-scratchpad"
+"Mod+A"       = "scratchpad-toggle:1"
+"Mod+Shift+A" = "window-toggle-scratchpad:1"
+
+"Mod+S"       = "scratchpad-toggle:2"
+"Mod+Shift+S" = "window-toggle-scratchpad:2"
+
+"Mod+D"       = "scratchpad-toggle:3"
+"Mod+Shift+D" = "window-toggle-scratchpad:3"
 
 # ============================================================================
 # Overview & Layout
 # ============================================================================
-"Mod+A"       = "overview-toggle"
+"Mod+X"       = "overview-toggle"
 "Mod+Shift+T" = 'spawn:umbriel msg workspace-set-layout:toggle && noctalia msg notification-show "Workspace Layout" "Switched to $(umbriel workspaces | grep "(focused)" | tr -d "[]*" | awk "{print \$3}")"'
 
 # ============================================================================
