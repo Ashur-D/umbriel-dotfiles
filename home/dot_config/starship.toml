@@ -1,16 +1,17 @@
 palette = "noctalia"
-# add_newline = false
 
 format = """
-[](yellow)\
+[](red)\
 $os\
 $username\
-[](bg:blue fg:yellow)\
+[](bg:yellow fg:red)\
 $directory\
-[](fg:blue bg:cyan)\
+[](bg:cyan fg:yellow)\
 $git_branch\
 $git_status\
-[](fg:cyan bg:green)\
+[](fg:cyan bg:blue)\
+[](fg:blue bg:magenta)\
+[](fg:magenta bg:green)\
 [ 󰭟 ](bg:green fg:black)\
 [ ](fg:green)\
 $line_break\
@@ -18,17 +19,17 @@ $character"""
 
 [username]
 show_always = true
-style_user = "bg:yellow fg:black bold"
+style_user = "bg:red fg:black bold"
 style_root = "bg:red fg:black bold"
 format = '[$user ]($style)'
 disabled = false
 
 [os]
-style = "bg:yellow fg:black"
+style = "bg:red fg:black"
 disabled = true
 
 [directory]
-style = "bg:blue fg:black bold"
+style = "bg:yellow fg:black bold"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -60,40 +61,40 @@ vimcmd_symbol = "[❮](bold magenta)"
 
 [palettes.noctalia]
 # Standard colors
-blue      = "#a8c476"
-red       = "#ee864c"
-green     = "#d79875"
-yellow    = "#c9bd71"
-cyan      = "#dcd4a3"
-magenta   = "#deb7a1"
-white     = "#f3f2f2"
-black     = "#302721"
+blue      = "#a7ad85"
+red       = "#fd4663"
+green     = "#c1938b"
+yellow    = "#c46ea0"
+cyan      = "#daa4c4"
+magenta   = "#ccaec3"
+white     = "#f2f2f3"
+black     = "#2e2f24"
 
 # Extended palette (Catppuccin-compatible names)
-rosewater = "#c9bd71"
-flamingo  = "#ee864c"
-pink      = "#deb7a1"
-mauve     = "#deb7a1"
-maroon    = "#ee864c"
-peach     = "#c9bd71"
-teal      = "#dcd4a3"
-sky       = "#dcd4a3"
-sapphire  = "#a8c476"
-lavender  = "#deb7a1"
+rosewater = "#c46ea0"
+flamingo  = "#fd4663"
+pink      = "#ccaec3"
+mauve     = "#ccaec3"
+maroon    = "#fd4663"
+peach     = "#c46ea0"
+teal      = "#daa4c4"
+sky       = "#daa4c4"
+sapphire  = "#a7ad85"
+lavender  = "#ccaec3"
 
 # Text shades
-text      = "#f3f2f2"
-subtext1  = "#f3f2f2"
-subtext0  = "#716761"
+text      = "#f2f2f3"
+subtext1  = "#f2f2f3"
+subtext0  = "#6f6e61"
 
 # Surface shades
-overlay2  = "#716761"
-overlay1  = "#716761"
-overlay0  = "#302721"
-surface2  = "#302721"
-surface1  = "#302721"
-surface0  = "#231d1a"
-base      = "#231d1a"
-mantle    = "#231d1a"
-crust     = "#231d1a"
+overlay2  = "#6f6e61"
+overlay1  = "#6f6e61"
+overlay0  = "#2e2f24"
+surface2  = "#2e2f24"
+surface1  = "#2e2f24"
+surface0  = "#22231c"
+base      = "#22231c"
+mantle    = "#22231c"
+crust     = "#22231c"
 # <<< NOCTALIA STARSHIP PALETTE <<<
