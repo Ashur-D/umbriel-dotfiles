@@ -278,6 +278,7 @@ format = "{:L%A %I:%M}"
 type = "noctalia/screen_recorder:recorder"
 
 [widget.tray]
+detached_panel = true
 drawer = true
 hide_passive = false
 match_adjacent_spacing = true
