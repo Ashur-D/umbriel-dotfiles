@@ -9,6 +9,3 @@
 **/.git/**
 logs/**
 tmp/**
-# Installer scripts (should stay in repo, not copied to $HOME)
-install/**
-README.md
