@@ -20,7 +20,6 @@ fi
 # Core desktop, shell, theming, and tool packages
 CORE_PACKAGES=(
     # Compositor & Desktop Shell
-    xdg-desktop-portal-umbriel-git
     xwayland-satellite
     umbriel-git
     noctalia
