@@ -52,7 +52,7 @@ CORE_PACKAGES=(
     maplemono-ttf # main font
     noto-fonts-emoji # or ttf-apple-emoji
     noto-fonts # font
-    # adw-gtk-theme # gtk theme
+    adw-gtk-theme # gtk theme
 )
 
 echo ":: Installing core packages..."
