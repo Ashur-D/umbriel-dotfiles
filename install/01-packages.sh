@@ -47,13 +47,12 @@ CORE_PACKAGES=(
 
     # Capture, Fonts & GTK
     wl-clipboard
-    satty
     gpu-screen-recorder
     bibata-cursor-theme-bin # cursor
     maplemono-ttf # main font
     noto-fonts-emoji # or ttf-apple-emoji
     noto-fonts # font
-    adw-gtk-theme # gtk theme
+    # adw-gtk-theme # gtk theme
 )
 
 echo ":: Installing core packages..."

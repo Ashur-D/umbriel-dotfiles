@@ -239,8 +239,9 @@ settings_window_translucent = true
     wallpaper_placement = "floating"
 
     [shell.screenshot]
-    pipe_command = "satty -f - --early-exit --copy-command wl-copy"
-    pipe_to_command = true
+    annotate = true
+    pipe_command = ""
+    pipe_to_command = false
 
     [shell.session]
     show_shortcuts = false
@@ -253,7 +254,7 @@ source = "wallpaper"
 wallpaper_scheme = "soft"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
     community_ids = [ "yazi" ]
     enable_community_templates = true
 
