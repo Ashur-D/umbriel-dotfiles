@@ -8,6 +8,7 @@ position = [0, 0]
 scale = 1
 min_workspaces = 3
 # workspaces = 5
+workspace_axis = "horizontal"
 
 [layout]
 mode = "dwindle"
