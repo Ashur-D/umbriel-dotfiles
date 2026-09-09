@@ -8,7 +8,7 @@
 | Package | Description |
 |---|---|
 | `helium-browser-bin` | Minimal, lightweight Chromium-based browser |
-| `vesktop-bin` | Discord client with native Wayland screenshare & Vencord |
+| `discord` | Its discord |
 | `obsidian` | Markdown knowledge base & personal note-taking |
 | `localsend` | Cross-platform local network file sharing |
 | `fastpotify-bin` | Lightweight Spotify desktop client |
