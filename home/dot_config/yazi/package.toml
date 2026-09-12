@@ -25,8 +25,8 @@ hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "d2dd310"
-hash = "5ca9b76fe72f376768b7a8a39d8b81d6"
+rev = "f1cec0b"
+hash = "fd9312e974c63438b1f8737711462d52"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
@@ -35,18 +35,8 @@ hash = "9776f378459072b6c2875eae5addc49d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "4dc7f1b"
+rev = "58c4f4e"
 hash = "5bb0bfab901d3601c370eafdd66edd31"
-
-[[plugin.deps]]
-use = "ndtoan96/ouch"
-rev = "cfe4f50"
-hash = "eff5702573b6cfba61e4ac8b1969629a"
-
-[[plugin.deps]]
-use = "AnirudhG07/rich-preview"
-rev = "02597c4"
-hash = "33982a6e2d6df07619a2a0fc163a0950"
 
 [flavor]
 deps = []
