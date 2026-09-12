@@ -1,13 +1,21 @@
-# Generated theme and cache files (Noctalia generates these dynamically)
+# Dynamic Noctalia wallpaper themes
+.config/umbriel/noctalia.toml
 .config/kitty/themes/**
-.config/zed/**
+.config/btop/themes/**
+.config/gtk-3.0/noctalia.css
+.config/gtk-4.0/noctalia.css
 .config/yazi/flavors/**
-.config/nvim/lua/matugen*
-.config/nvim/lazy-lock.json
+.config/zed/**
 .config/starship.toml
+.config/nvim/lua/matugen*
 
+# Package manager lockfiles & vendor downloads
+.config/nvim/lazy-lock.json
+.config/yazi/plugins/**
 
-# Cache, logs, and transient files
+# Backups, swap, logs, and caches
+**/*.bak
+**/*.swp
 **/.git/**
 logs/**
 tmp/**
