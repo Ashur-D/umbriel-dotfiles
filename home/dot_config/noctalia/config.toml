@@ -31,6 +31,8 @@ order = [ "main" ]
         padding = 18.0
 
         [[bar.main.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
         border = ""
         enabled = true
         fill = "surface_variant"
@@ -92,7 +94,7 @@ behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
     timeout = 660.0
 
 [location]
-address = "Oakville,Canada"
+address = ""
 
 [lockscreen_widgets]
 enabled = true
@@ -204,13 +206,29 @@ widget_order = [
 offset_y = 80
 position = "bottom_center"
 
+[plugin_settings."ashur-d/wallpaper-widget"]
+close_on_apply = true
+
+[plugin_settings."noctalia/mpvpaper"]
+picker_placement = "floating"
+video_directory = "/home/ash/.local/share/Steam/steamapps/workshop/content/431960/1439593106"
+
 [plugin_settings."noctalia/screen_recorder"]
 color_range = "full"
 hide_inactive = true
 video_source = "focused"
 
+[plugin_settings."tadomika_ari/w-engine"]
+grid_columns = 3
+
 [plugins]
-enabled = [ "noctalia/screen_recorder", "cleboost/zed-provider", "ashur-d/arch-packages", "ashur-d/nvim-projects" ]
+enabled = [
+    "noctalia/screen_recorder",
+    "cleboost/zed-provider",
+    "ashur-d/arch-packages",
+    "ashur-d/nvim-projects",
+    "ashur-d/wallpaper-widget"
+]
 
     [[plugins.source]]
     kind = "git"
@@ -233,10 +251,11 @@ settings_window_translucent = true
 
     [shell.panel]
     control_center_placement = "floating"
-    control_center_position = "top_center"
+    control_center_position = "auto"
     session_placement = "floating"
     transparency_mode = "glass"
     wallpaper_placement = "floating"
+    wallpaper_position = "center"
 
     [shell.screenshot]
     annotate = true
@@ -247,8 +266,8 @@ settings_window_translucent = true
     show_shortcuts = false
 
 [theme]
-builtin = "Noctalia"
-community_palette = "Oxocarbon"
+builtin = "Gruvbox"
+community_palette = "Cream Autumn"
 mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "soft"
@@ -259,18 +278,18 @@ wallpaper_scheme = "soft"
     enable_community_templates = true
 
 [wallpaper]
-directory = "/home/ash/Pictures/wallpapers"
-directory_dark = "/home/ash/Pictures/wallpapers"
+directory = "/home/ash/Downloads/wallpapers/wallpapers"
+directory_dark = "/home/ash/Downloads/wallpapers/wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ash/Pictures/wallpapers/valhiem2.png"
+    path = "/home/ash/Downloads/wallpapers/wallpapers/Valheim - Plains Biome.png"
 
     [wallpaper.last]
-    path = "/home/ash/Pictures/wallpapers/valhiem2.png"
+    path = "/home/ash/Downloads/wallpapers/wallpapers/Valheim - Plains Biome.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ash/Pictures/wallpapers/valhiem2.png"
+    path = "/home/ash/Downloads/wallpapers/wallpapers/Valheim - Plains Biome.png"
 
 [widget.clock]
 format = "{:L%A %I:%M}"

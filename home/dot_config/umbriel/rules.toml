@@ -7,6 +7,11 @@ opacity = 0.97
 # blur = true
 # blur_optimized = true
 
+[[window_rule]]
+match.app_id = "^helium.*$"
+default_floating = true
+opacity = 1.0
+
 # ----------------------------------------------------------------------------
 # Steam Rules
 # ----------------------------------------------------------------------------

@@ -13,7 +13,8 @@
 "Mod+V"            = "spawn:noctalia msg panel-toggle clipboard"
 "Mod+Escape"       = "spawn:noctalia msg panel-toggle control-center"
 "Mod+Shift+Escape" = "spawn:noctalia msg panel-toggle session"
-"Mod+Shift+W"      = "spawn:noctalia msg wallpaper-random"
+"Mod+Ctrl+W"       = "spawn:noctalia msg wallpaper-random"
+"Mod+Shift+W"      = "spawn:noctalia msg panel-toggle ashur-d/wallpaper-widget:hub"
 "Mod+Shift+N"      = "spawn:noctalia msg nightlight-toggle"
 "Mod+Shift+R"      = "spawn:noctalia msg plugin noctalia/screen_recorder:service all toggle"
 
@@ -121,5 +122,5 @@
 # ============================================================================
 # System & Configuration
 # ============================================================================
-"Mod+K"            = "cheatsheet-toggle"
+"Mod+K" = "cheatsheet-toggle"
 "Mod+Ctrl+Shift+R" = 'spawn:umbriel msg config-reload && noctalia msg notification-show "Umbriel" "Config Reloaded"'
