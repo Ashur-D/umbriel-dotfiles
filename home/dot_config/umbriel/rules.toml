@@ -8,8 +8,15 @@ opacity = 0.97
 # blur_optimized = true
 
 [[window_rule]]
+match.app_id = ".*"
+match.title = ".*(π|pi) - .*"
+opacity = 1
+blur = true
+blur_optimized = true
+
+[[window_rule]]
 match.app_id = "^helium.*$"
-default_floating = true
+default_floating = false
 opacity = 1.0
 
 # ----------------------------------------------------------------------------
