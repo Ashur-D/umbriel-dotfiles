@@ -32,14 +32,14 @@ opacity = 1.0
 [[window_rule]]
 match.app_id = "^steam$"
 match.title = "^Steam$"
-default_size = [1100, 700]
+default_floating_size_px = { width = 1100, height = 700 }
 default_position = { x = 0, y = 0, anchor = "center" }
 
 # Steam Friends list size
 [[window_rule]]
 match.app_id = "^steam$"
 match.title = "^Friends List$"
-default_size = [460, 800]
+default_floating_size_px = { width = 460, height = 800 }
 
 # ----------------------------------------------------------------------------
 # Dialogs & Utilities
@@ -54,7 +54,7 @@ default_floating = true
 match.app_id = "^com.gabm.satty$"
 default_floating = true
 default_pinned = true
-default_size = [460, 800]
+default_floating_size_px = { width = 460, height = 800 }
 default_position = { x = 0, y = 0, anchor = "center" }
 
 # ----------------------------------------------------------------------------
@@ -71,5 +71,5 @@ blur_popups = true
 [[window_rule]]
 match.app_id = "^dev\\.noctalia\\.Noctalia$"
 default_floating = true
-default_size = [1280, 920]
+default_floating_size_px = { width = 1280, height = 920 }
 default_position = { x = 0, y = 0, anchor = "center" }

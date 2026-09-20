@@ -26,5 +26,7 @@ files = [
   # "animations/gentle.toml",      # Luxurious, cinematic slow glide (500ms)
   # "animations/expressive.toml",  # Material You / Android 14 motion
   # "animations/glide.toml",       # Horizontal momentum slide,
-  "noctalia.toml",
-]
+  ]
+
+[include.optional]
+files = ["noctalia.toml"]
