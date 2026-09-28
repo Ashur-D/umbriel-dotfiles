@@ -49,14 +49,6 @@ default_floating_size_px = { width = 460, height = 800 }
 match.title = "^(Open File|Select|Choose a wallpaper|Open Folder|Save As|Library|Choose Where to Download|File Operation Progress|Rename|Copy Files|Move Files|Search Files)$"
 default_floating = true
 
-# Satty (Screenshot annotation)
-[[window_rule]]
-match.app_id = "^com.gabm.satty$"
-default_floating = true
-default_pinned = true
-default_floating_size_px = { width = 460, height = 800 }
-default_position = { x = 0, y = 0, anchor = "center" }
-
 # ----------------------------------------------------------------------------
 # Desktop Shell (Noctalia)
 # ----------------------------------------------------------------------------

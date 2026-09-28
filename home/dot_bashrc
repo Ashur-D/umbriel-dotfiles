@@ -44,4 +44,4 @@ function y() {
     rm -f -- "$tmp"
 }
 
-export PATH="$PATH:/home/ash/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"

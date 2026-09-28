@@ -12,8 +12,8 @@ drag_opacity = 0.75
 [appearance.blur]
 enabled = true
 optimized = true
-passes = 1
-radius = 6
+passes = 2
+radius = 7
 noise = 0.02
 brightness = 0.9
 contrast = 0.9
