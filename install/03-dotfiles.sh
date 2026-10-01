@@ -62,4 +62,9 @@ else
     echo ":: Wallpapers already present at ~/Pictures/wallpapers."
 fi
 
+# if [ ! -f "$HOME/.config/starship.toml" ]; then
+#     cp "$REPO_DIR/home/dot_config/starship.toml"
+# "$HOME/.config/starship.toml"
+# fi
+
 echo ":: Dotfiles and post-install configuration complete."
