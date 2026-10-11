@@ -24,11 +24,6 @@ rev = "=5d5c480"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
-use = "boydaihungst/mediainfo"
-rev = "f1cec0b"
-hash = "fd9312e974c63438b1f8737711462d52"
-
-[[plugin.deps]]
 use = "Rolv-Apneseth/starship"
 rev = "ea92cf4"
 hash = "9776f378459072b6c2875eae5addc49d"
