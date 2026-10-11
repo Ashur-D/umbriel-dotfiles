@@ -27,12 +27,20 @@ fi
 xdg-user-dirs-update
 
 # Enable essential system services
-echo ":: Enabling network, bluetooth, and power services..."
+echo ":: Enabling bluetooth and power services..."
 sudo systemctl enable --now \
     bluetooth.service \
-    iwd.service \
-    systemd-networkd.service \
-    systemd-resolved.service \
     power-profiles-daemon.service 2>/dev/null || true
+
+# Enable networking stack (prefer systemd-networkd + iwd only if NetworkManager is not installed/active)
+if ! systemctl is-enabled NetworkManager &>/dev/null && ! command -v nmcli &>/dev/null; then
+    echo ":: Enabling systemd-networkd, systemd-resolved, and iwd..."
+    sudo systemctl enable --now \
+        iwd.service \
+        systemd-networkd.service \
+        systemd-resolved.service 2>/dev/null || true
+else
+    echo ":: NetworkManager detected. Skipping systemd-networkd/iwd to prevent conflicts."
+fi
 
 echo ":: System and hardware configuration complete."

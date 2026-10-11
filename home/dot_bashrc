@@ -60,4 +60,14 @@ function y() {
     rm -f -- "$tmp"
 }
 
+###------------------- pi helper -----------------------###
+pi() {
+    if [ "$PWD" = "$HOME" ]; then
+        cd "$HOME/PiProjects" && command pi "$@"
+    else
+        command pi "$@"
+    fi
+}
+alias piq='pi --no-session'
+
 export PATH="$PATH:$HOME/.local/bin"

@@ -4,20 +4,20 @@
 [[window_rule]]
 match.app_id = ".*"
 opacity = 0.97
-# blur = true
-# blur_optimized = true
 
+# Blur selected applications
 [[window_rule]]
-match.app_id = ".*"
-match.title = ".*(π|pi) - .*"
+match.app_id = "^(kitty|com\\.Nautilus|dev\\.zed\\.Zed)$"
 opacity = 1
 blur = true
 blur_optimized = true
 
+# helium
 [[window_rule]]
-match.app_id = "^helium.*$"
+match.app_id = "^helium\\.$"
+blur = false
 default_floating = false
-opacity = 1.0
+
 
 # ----------------------------------------------------------------------------
 # Steam Rules

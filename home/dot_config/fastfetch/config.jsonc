@@ -58,7 +58,7 @@
       "type": "command",
       "key": " ",
       "keyColor": "33",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "text": "birth_install=$(stat -c %W / 2>/dev/null || echo 0); [ \"$birth_install\" -le 0 ] && birth_install=$(stat -c %W /lost+found 2>/dev/null || echo 0); [ \"$birth_install\" -le 0 ] && birth_install=$(stat -c %Y /var/log/pacman.log 2>/dev/null || echo 0); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo ${days_difference} days"
     },
     {
       "type": "uptime",
