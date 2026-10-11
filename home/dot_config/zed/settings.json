@@ -8,7 +8,6 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --- Core Editor Settings ---
-  "cli_default_open_behavior": "existing_window",
   "indent_guides": {
     "background_coloring": "indent_aware",
     "coloring": "indent_aware"
@@ -22,6 +21,11 @@
     "light": "One Dark",
     "dark": "Catppuccin Mocha (Blur) [Heavy]"
   },
+
+  // --- fonts ---
+  "buffer_font_family": "Maple Mono",
+  "agent_buffer_font_family": "Maple Mono",
+  "ui_font_family": "Maple Mono",
 
   // --- UI Elements ---
   "scrollbar": {
@@ -74,11 +78,13 @@
 
   // --- AI & Agent ---
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
     "dock": "right",
     "enable_feedback": false,
     "favorite_models": [],
-    "model_parameters": [],
-    "sidebar_side": "right"
+    "model_parameters": []
   },
   "disable_ai": true,
 
