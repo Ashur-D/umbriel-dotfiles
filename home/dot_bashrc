@@ -44,12 +44,10 @@ fi
 command -v zoxide &>/dev/null && eval "$(zoxide init bash)"
 command -v fzf &>/dev/null && eval "$(fzf --bash 2>/dev/null || fzf --key-bindings --completion 2>/dev/null)"
 
-###------------------- umbriel auto start -----------------------###
-alias umbriel='start-umbriel'
-
-if [ "$(tty)" = "/dev/tty1" ]; then
-    exec start-umbriel
-fi
+###------------------- umbriel -----------------------###
+# tty1 autostart lives in ~/.bash_profile. This alias used to be named `umbriel`,
+# which shadowed the real `umbriel` CLI (msg / windows / config validate).
+alias start='start-umbriel'
 
 ###------------------- shell wrapper -----------------------###
 function y() {

@@ -16,6 +16,8 @@ GDK_SCALE = "1"
 SDL_VIDEODRIVER = "wayland"
 MOZ_ENABLE_WAYLAND = "1"
 ELECTRON_OZONE_PLATFORM_HINT = "auto"
-# Safe Nvidia environment variables (enabled automatically if Nvidia GPU is detected)
+{{- if .hasNvidia }}
+# Rendered only because an Nvidia GPU was detected at `chezmoi init`
 LIBVA_DRIVER_NAME = "nvidia"
 __GLX_VENDOR_LIBRARY_NAME = "nvidia"
+{{- end }}

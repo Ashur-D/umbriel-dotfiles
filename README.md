@@ -1,79 +1,39 @@
-# 📦 Optional Package List
+# umbriel-dotfiles
 
-<details>
-<summary><strong>View all packages</strong></summary>
+Arch Linux + [Umbriel](https://docs.noctalia.dev/umbriel/) compositor + Noctalia shell, managed with [chezmoi](https://www.chezmoi.io/).
 
-### 🌐 Daily Desktop Apps
+## Install
 
-| Package | Description |
+On a fresh Arch install, as your regular user (not root):
+
+```sh
+sudo pacman -S --needed git chezmoi
+chezmoi init --apply Ashur-D/umbriel-dotfiles
+```
+
+`init` asks once which optional package groups to install, detects an Nvidia GPU, then applies everything: packages, drivers, services, networking, configs and wallpapers.
+
+## Day to day
+
+```sh
+chezmoi diff     # what would change
+chezmoi apply    # apply it
+```
+
+Edit `home/.chezmoidata/packages.toml` to add or remove packages; the install script re-runs automatically when the list changes.
+
+## Layout
+
+| Path | Purpose |
 |---|---|
-| `helium-browser-bin` | Minimal, lightweight Chromium-based browser |
-| `discord` | Its discord |
-| `obsidian` | Markdown knowledge base & personal note-taking |
-| `localsend` | Cross-platform local network file sharing |
-| `fastpotify-bin` | Lightweight Spotify desktop client |
+| `home/.chezmoidata/packages.toml` | Package lists (`core`, optional groups, Nvidia) and launcher-hidden apps |
+| `home/.chezmoi.toml.tmpl` | `init` questions and Nvidia detection |
+| `home/.chezmoiscripts/` | `10-packages` (yay + packages), `20-system` (services, networking, hidden apps) |
+| `home/.chezmoiexternal.toml` | Wallpapers git repo, cloned to `~/Pictures/wallpapers` |
+| `home/dot_config/…` | App configs |
 
-### 🎮 Gaming
+Files prefixed `create_` (Noctalia, Zed, starship) are written once and never overwritten, because those apps edit their own config.
 
-| Package | Description |
-|---|---|
-| `steam` | Valve Steam digital game launcher |
-| `proton-cachyos` | Performance-optimized Proton compatibility layer |
+## Optional package groups
 
-### 💻 Development & Code
-
-| Package | Description |
-|---|---|
-| `zed` | High-performance, GPU-accelerated code editor |
-| `lazygit` | Simple and fast terminal UI for Git |
-| `git` | Fast, scalable distributed version control system |
-| `openssh` | Secure shell remote access & cryptographic tools |
-| `winboat` | Run Windows apps on Linux with seamless integration |
-
-
-### 🔍 Modern CLI & Navigation
-
-| Package | Description |
-|---|---|
-| `eza` | Modern `ls` alternative with colors, icons & Git status |
-| `zoxide` | Smarter, fast `cd` directory jumper tracking habits |
-| `fzf` | Interactive command-line fuzzy finder |
-| `fd` | Fast, user-friendly alternative to `find` |
-| `ripgrep` | Blazing fast regex search tool replacing `grep` |
-| `7zip` | used for zipping and unzipping files in yazi |
-
-### 🛠️ System Management & Utilities
-
-| Package | Description |
-|---|---|
-| `btop` | Modern hardware resource & process monitor |
-| `systemctl-tui` | Fast TUI for inspecting and controlling systemd units & logs |
-| `systemd-manager-tui` | Interactive TUI manager for systemd services |
-| `netsonar-bin` | Real-time terminal network traffic & packet monitor |
-| `gdu` | Fast interactive terminal disk usage analyzer |
-| `efibootmgr` | Tool to view and modify UEFI boot manager entries |
-| `lact-git` | Linux GPU Configuration And Monitoring Tool |
-
-
-### 🎨 Media & Viewers
-
-| Package | Description |
-|---|---|
-| `mpv` | High-performance, scriptable media and video player |
-| `imv` | Fast, lightweight image viewer built for Wayland |
-| `stremio` | hub for video content aggregation
-
-### 🌿 Terminal Rice & Visuals
-
-| Package | Description |
-|---|---|
-| `catnap-git` | Fast, minimal aesthetic system fetch tool |
-| `weathr` | Terminal weather forecast with live ASCII animations |
-| `stormy-bin` | Clean and minimal terminal weather fetcher |
-| `cbonsai` | Procedural bonsai tree generator in the terminal |
-| `terminal-rain-lightning-git` | Matrix digital rain effect with thunder and lightning |
-| `scope-tui` | Real-time audio oscilloscope & vectorscope in the terminal |
-| `astroterm` | Interactive night-sky planetarium simulator for CLI |
-| `asciinema` | Lightweight terminal session recorder and sharer |
-
-</details>
+Chosen at `init` via `packageGroups`: `desktop`, `gaming`, `dev`, `cli`, `system`, `media`, `rice`. See `packages.toml` for contents. Change the selection later in `~/.config/chezmoi/chezmoi.toml`.

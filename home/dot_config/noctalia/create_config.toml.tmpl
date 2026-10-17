@@ -211,7 +211,7 @@ close_on_apply = true
 
 [plugin_settings."noctalia/mpvpaper"]
 picker_placement = "floating"
-video_directory = "/home/ash/.local/share/Steam/steamapps/workshop/content/431960/1439593106"
+video_directory = "{{ .chezmoi.homeDir }}/.local/share/Steam/steamapps/workshop/content/431960/1439593106"
 
 [plugin_settings."noctalia/screen_recorder"]
 color_range = "full"
@@ -241,7 +241,7 @@ enabled = [
     name = "community"
 
 [shell]
-avatar_path = "/home/ash/Pictures/wallpapers/wallpapers/wallpaper22.jpg"
+avatar_path = "{{ .chezmoi.homeDir }}/Pictures/wallpapers/wallpapers/wallpaper22.jpg"
 font_family = "Maple Mono"
 panel_anchor_bar = "main"
 settings_window_translucent = true
@@ -278,18 +278,18 @@ wallpaper_scheme = "soft"
     enable_community_templates = true
 
 [wallpaper]
-directory = "/home/ash/Downloads/wallpapers/wallpapers"
-directory_dark = "/home/ash/Downloads/wallpapers/wallpapers"
+directory = "{{ .chezmoi.homeDir }}/Pictures/wallpapers/wallpapers"
+directory_dark = "{{ .chezmoi.homeDir }}/Pictures/wallpapers/wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/ash/Downloads/wallpapers/wallpapers/Valheim - Plains Biome.png"
+    path = "{{ .chezmoi.homeDir }}/Pictures/wallpapers/wallpapers/Valheim - Plains Biome.png"
 
     [wallpaper.last]
-    path = "/home/ash/Downloads/wallpapers/wallpapers/Valheim - Plains Biome.png"
+    path = "{{ .chezmoi.homeDir }}/Pictures/wallpapers/wallpapers/Valheim - Plains Biome.png"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ash/Downloads/wallpapers/wallpapers/Valheim - Plains Biome.png"
+    path = "{{ .chezmoi.homeDir }}/Pictures/wallpapers/wallpapers/Valheim - Plains Biome.png"
 
 [widget.clock]
 format = "{:L%A %I:%M}"

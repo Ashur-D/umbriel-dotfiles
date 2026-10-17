@@ -1,0 +1,46 @@
+#!/bin/bash
+# Installs yay (if missing) and every selected package.
+# Re-runs only when the rendered list changes: edit .chezmoidata/packages.toml.
+set -euo pipefail
+
+if ! command -v yay >/dev/null 2>&1; then
+    echo ":: Installing yay from AUR..."
+    sudo pacman -S --needed --noconfirm git base-devel
+    tmp=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$tmp/yay"
+    # Build as the user, install with one sudo prompt (yay-[0-9]* skips yay-debug).
+    (cd "$tmp/yay" && makepkg -s --noconfirm && sudo pacman -U --noconfirm yay-[0-9]*.pkg.tar.zst)
+    rm -rf "$tmp"
+fi
+
+PKGS=(
+{{- range .packages.core }}
+    {{ . | quote }}
+{{- end }}
+{{- range (splitList "," .packageGroups) }}
+{{-   $group := trim . }}
+{{-   if hasKey $.packages $group }}
+    # {{ $group }}
+{{-     range index $.packages $group }}
+    {{ . | quote }}
+{{-     end }}
+{{-   end }}
+{{- end }}
+{{- if .hasNvidia }}
+    # nvidia
+{{-   range .nvidia.packages }}
+    {{ . | quote }}
+{{-   end }}
+{{- end }}
+)
+{{ if .hasNvidia }}
+# Headers for every installed kernel (linux, linux-lts, linux-zen, ...).
+for f in /usr/lib/modules/*/pkgbase; do
+    if [ -f "$f" ]; then PKGS+=("$(<"$f")-headers"); fi
+done
+# 32-bit driver only if [multilib] is enabled.
+if grep -q '^\[multilib\]' /etc/pacman.conf; then
+    PKGS+=({{ range .nvidia.multilib_packages }}{{ . | quote }} {{ end }})
+fi
+{{ end }}
+yay -S --needed --noconfirm --mflags="--nocheck" "${PKGS[@]}"

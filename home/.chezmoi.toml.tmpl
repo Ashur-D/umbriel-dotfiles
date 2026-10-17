@@ -1,0 +1,18 @@
+{{- /* Rendered by `chezmoi init`. Answers are remembered in ~/.config/chezmoi/chezmoi.toml. */ -}}
+
+{{- /* Detect an NVIDIA GPU once; templates and scripts branch on .hasNvidia. */ -}}
+{{- $hasNvidia := false -}}
+{{- if lookPath "lspci" -}}
+{{-   $gpu := output "sh" "-c" "lspci 2>/dev/null | grep -Ei 'vga|3d' | grep -i nvidia || true" -}}
+{{-   $hasNvidia = contains "nvidia" (lower $gpu) -}}
+{{- end -}}
+
+{{- /* Optional groups from .chezmoidata/packages.toml: desktop,gaming,dev,cli,system,media,rice */ -}}
+{{- $groups := promptStringOnce . "packageGroups" "Optional package groups (comma separated: desktop,gaming,dev,cli,system,media,rice)" "dev,cli" -}}
+
+{{- /* .chezmoi.sourceDir already includes the `home` root, so keep its parent. */ -}}
+sourceDir = {{ dir .chezmoi.sourceDir | quote }}
+
+[data]
+    hasNvidia = {{ $hasNvidia }}
+    packageGroups = {{ $groups | quote }}

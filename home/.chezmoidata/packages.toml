@@ -1,0 +1,135 @@
+# Template data: chezmoi loads every file in .chezmoidata/ and exposes it to
+# templates (e.g. `.packages.core`, `.nvidia.packages`, `.hidden_apps`).
+#
+# The install scripts render these lists into their own body, so editing a list
+# here changes the script content and re-triggers its `run_onchange_` script.
+# Nothing else needs to be touched.
+
+# Utility apps hidden from the application launcher.
+hidden_apps = [
+    "bssh",
+    "bvnc",
+    "avahi-discover",
+    "rofi-theme-selector",
+    "thunar-bulk-rename",
+    "thunar-settings",
+    "wiremix",
+    "cmake-gui",
+    "org.gnupg.pinentry-qt",
+    "xdg-desktop-portal-gdk",
+    "xgps",
+    "xgpsspeed",
+    "qv4l2",
+    "qvidcap",
+    "lstopo",
+]
+
+[packages]
+# Always installed.
+core = [
+    # Compositor & Desktop Shell
+    "xwayland-satellite",
+    "umbriel-git",
+    "noctalia",
+
+    # Terminal, Shell & Tools
+    "kitty",
+    "starship",
+    "fastfetch",
+    "yazi",
+    "neovim",
+    "chezmoi",
+    "xdg-user-dirs",
+
+    # Audio & Power
+    "pipewire",
+    "pipewire-pulse",
+    "wireplumber",
+    "playerctl",
+    "power-profiles-daemon",
+    "python-gobject", # needed for power-profiles
+
+    # Networking & Bluetooth
+    "bluez",
+    "iwd",
+
+    # Capture, Fonts & GTK
+    "wl-clipboard",
+    "gpu-screen-recorder",
+    "bibata-cursor-theme-bin", # cursor
+    "maplemono-ttf",           # main font
+    "noto-fonts-emoji",        # or ttf-apple-emoji
+    "noto-fonts",
+    "adw-gtk-theme",
+]
+
+# Optional groups, selected via `packageGroups` in .chezmoi.toml.
+desktop = [
+    "helium-browser-bin",
+    "discord",
+    "obsidian",
+    "localsend",
+    "fastpotify-bin",
+]
+
+gaming = [
+    "steam",
+    "proton-cachyos",
+]
+
+dev = [
+    "zed",
+    "lazygit",
+    "git",
+    "openssh",
+    "winboat",
+]
+
+cli = [
+    "eza",
+    "zoxide",
+    "fzf",
+    "fd",
+    "ripgrep",
+    "7zip",
+]
+
+system = [
+    "btop",
+    "systemctl-tui",
+    "systemd-manager-tui",
+    "netsonar-bin",
+    "gdu",
+    "efibootmgr",
+    "lact-git",
+]
+
+media = [
+    "mpv",
+    "imv",
+    "stremio",
+]
+
+rice = [
+    "catnap-git",
+    "weathr",
+    "stormy-bin",
+    "cbonsai",
+    "terminal-rain-lightning-git",
+    "scope-tui",
+    "astroterm",
+    "asciinema",
+]
+
+# Installed only when an NVIDIA GPU is detected.
+[nvidia]
+packages = [
+    "nvidia-dkms",
+    "nvidia-utils",
+    "egl-wayland",
+    "libva-nvidia-driver",
+]
+# Only installed when [multilib] is enabled in /etc/pacman.conf.
+multilib_packages = [
+    "lib32-nvidia-utils",
+]
