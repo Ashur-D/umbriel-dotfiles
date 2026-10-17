@@ -7,7 +7,7 @@ opacity = 0.97
 
 # Blur selected applications
 [[window_rule]]
-match.app_id = "^(kitty|com\\.|dev\\.zed\\.Zed)$"
+match.app_id = "^(kitty|\\.|dev\\.zed\\.Zed)$"
 opacity = 1
 blur = true
 blur_optimized = true
@@ -18,6 +18,13 @@ match.app_id = "^helium.*$"
 opacity = 1.0
 blur = false
 default_floating = false
+
+# zeron
+[[window_rule]]
+match.app_id = "^zeron.*$"
+opacity = 0.80
+blur = true
+default_floating = true
 
 
 # ----------------------------------------------------------------------------

@@ -28,6 +28,8 @@
 | `lazygit` | Simple and fast terminal UI for Git |
 | `git` | Fast, scalable distributed version control system |
 | `openssh` | Secure shell remote access & cryptographic tools |
+| `winboat` | Run Windows apps on Linux with seamless integration |
+
 
 ### 🔍 Modern CLI & Navigation
 
@@ -50,6 +52,8 @@
 | `netsonar-bin` | Real-time terminal network traffic & packet monitor |
 | `gdu` | Fast interactive terminal disk usage analyzer |
 | `efibootmgr` | Tool to view and modify UEFI boot manager entries |
+| `lact-git` | Linux GPU Configuration And Monitoring Tool |
+
 
 ### 🎨 Media & Viewers
 
