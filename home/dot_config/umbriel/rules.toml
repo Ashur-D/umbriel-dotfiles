@@ -1,29 +1,42 @@
 # ----------------------------------------------------------------------------
-# All window rules
+# Window rules
+# Matching rules combine; for the same field, the later rule wins.
+# Windows default to fully opaque, so only opt in below.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Blur only
+# Apps that are already transparent themselves (kitty background_opacity,
+# Zed blur theme). Compositor opacity would fade the text too.
 # ----------------------------------------------------------------------------
 [[window_rule]]
-match.app_id = ".*"
-opacity = 0.97
-
-# Blur selected applications
-[[window_rule]]
-match.app_id = "^(kitty|\\.|dev\\.zed\\.Zed)$"
-opacity = 1
+match.app_id = [
+    '^kitty$',
+    '^dev\.zed\.Zed$',
+]
 blur = true
 blur_optimized = true
 
-# helium
+# ----------------------------------------------------------------------------
+# Opacity + blur
+# Apps with no native transparency option.
+# ----------------------------------------------------------------------------
 [[window_rule]]
-match.app_id = "^helium.*$"
-opacity = 1.0
-blur = false
-default_floating = false
+match.app_id = [
+    '^discord$',
+]
+opacity = 0.92
+blur = true
+blur_optimized = true
 
-# zeron
+# ----------------------------------------------------------------------------
+# Per-app overrides
+# ----------------------------------------------------------------------------
 [[window_rule]]
-match.app_id = "^zeron.*$"
+match.app_id = '^zeron.*$'
 opacity = 0.80
 blur = true
+blur_optimized = true
 default_floating = true
 
 
