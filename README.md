@@ -11,7 +11,7 @@ sudo pacman -S --needed git chezmoi
 chezmoi init --apply Ashur-D/umbriel-dotfiles
 ```
 
-`init` asks which modules to enable and detects an Nvidia GPU, then applies everything: packages, drivers, services, networking, configs and wallpapers.
+`init` asks which modules to enable and detects an Nvidia GPU, then applies everything: packages, drivers, services, configs and wallpapers.
 
 ## Day to day
 
@@ -44,8 +44,10 @@ If you already have a chezmoi config from an older version of this repo, run `ch
 | `home/.chezmoidata/modules.toml` | Modules, Nvidia packages, launcher-hidden apps |
 | `home/.chezmoi.toml.tmpl` | `init` questions and Nvidia detection |
 | `home/.chezmoiignore.tmpl` | Skips configs of disabled modules, plus generated files |
-| `home/.chezmoiscripts/` | `10-packages` (yay + packages), `20-system` (services, networking, hidden apps), `30-yazi-plugins` |
+| `home/.chezmoiscripts/` | `10-packages` (yay + packages), `20-system` (services, hidden apps), `30-yazi-plugins` |
 | `home/.chezmoiexternal.toml` | Wallpapers git repo, cloned to `~/Pictures/wallpapers` |
 | `home/dot_config/…` | App configs |
+
+Networking is NetworkManager (Ethernet + Wi-Fi, no config files). If `iwd` or `systemd-networkd` is already enabled, the system script skips NetworkManager and prints the commands to switch.
 
 Files prefixed `create_` (Noctalia, Zed, starship) are written once and never overwritten, because those apps edit their own config.

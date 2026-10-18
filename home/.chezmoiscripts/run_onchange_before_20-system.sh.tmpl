@@ -1,15 +1,27 @@
 #!/bin/bash
-# Services, networking and launcher cleanup. Idempotent; re-runs when
-# the module services or `hidden_apps` in .chezmoidata/modules.toml change.
+# Services and launcher cleanup. Idempotent; re-runs when the module
+# services or `hidden_apps` in .chezmoidata/modules.toml change.
 set -euo pipefail
 
 warn() { echo ":: WARNING: $*" >&2; }
 
 xdg-user-dirs-update
 
+# NetworkManager conflicts with iwd / systemd-networkd. Never switch a running
+# network stack automatically: it could cut the connection mid-run.
+conflict=
+for svc in iwd.service systemd-networkd.service; do
+    if systemctl is-enabled "$svc" >/dev/null 2>&1; then conflict=$svc; fi
+done
+if [ -n "$conflict" ]; then
+    warn "$conflict is enabled and conflicts with NetworkManager; skipping NetworkManager."
+    warn "To switch: sudo systemctl disable --now iwd systemd-networkd && sudo systemctl enable --now NetworkManager"
+fi
+
 # --- Services (failures are reported, not hidden) ---------------------------
 enable() {
     for svc in "$@"; do
+        if [ "$svc" = NetworkManager.service ] && [ -n "$conflict" ]; then continue; fi
         sudo systemctl enable --now "$svc" || warn "failed to enable $svc"
     done
 }
@@ -22,40 +34,6 @@ enable{{ range $m.services }} {{ . | quote }}{{ end }}
 {{-   end }}
 {{- end }}
 
-# --- Networking: iwd + systemd-networkd, unless NetworkManager is present ---
-if systemctl is-enabled NetworkManager >/dev/null 2>&1 || command -v nmcli >/dev/null 2>&1; then
-    echo ":: NetworkManager detected; skipping iwd/systemd-networkd."
-else
-    write_once() { [ -e "$1" ] || sudo tee "$1" >/dev/null; }
-    sudo mkdir -p /etc/systemd/network
-
-    # networkd needs .network files, otherwise no interface gets an address.
-    write_once /etc/systemd/network/20-wired.network <<'EOF'
-[Match]
-Name=en*
-
-[Network]
-DHCP=yes
-
-[DHCPv4]
-RouteMetric=100
-EOF
-    write_once /etc/systemd/network/25-wireless.network <<'EOF'
-[Match]
-Name=wl*
-
-[Network]
-DHCP=yes
-IgnoreCarrierLoss=3s
-
-[DHCPv4]
-RouteMetric=600
-EOF
-    if [ "$(readlink /etc/resolv.conf || true)" != /run/systemd/resolve/stub-resolv.conf ]; then
-        sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-    fi
-    enable iwd.service systemd-networkd.service systemd-resolved.service
-fi
 
 # --- Hide utility apps from the launcher ------------------------------------
 # A minimal per-user override with Hidden=true. (Copying the system file and

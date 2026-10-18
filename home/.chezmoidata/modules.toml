@@ -68,8 +68,8 @@ packages = [
     "python-gobject", # needed for power-profiles
 
     # Networking & Bluetooth
+    "networkmanager", # Ethernet + Wi-Fi (pulls in wpa_supplicant)
     "bluez",
-    "iwd",
 
     # Capture, Fonts & GTK
     "wl-clipboard",
@@ -81,6 +81,7 @@ packages = [
     "adw-gtk-theme",
 ]
 services = [
+    "NetworkManager.service",
     "bluetooth.service",
     "power-profiles-daemon.service",
 ]
