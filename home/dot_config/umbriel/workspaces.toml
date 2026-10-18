@@ -5,16 +5,31 @@ empty_above = false
 # ----------------------------------------------------------------------------
 # Outputs
 # ----------------------------------------------------------------------------
-# Default settings for any connected display (laptops, HDMI, multi-monitor)
-[output."*"]
+# Primary desktop monitor (180Hz)
+[output.DP-1]
+mode = "1920x1080@180"
+position = [0, 0]
 scale = 1
 min_workspaces = 3
 workspace_axis = "horizontal"
 
-# Primary desktop monitor override (180Hz)
-[output.DP-1]
-mode = "1920x1080@180"
-position = [0, 0]
+# Virtual Machines (QEMU/KVM, GNOME Boxes)
+[output.Virtual-1]
+scale = 1
+min_workspaces = 3
+workspace_axis = "horizontal"
+
+# Laptops
+[output.eDP-1]
+scale = 1
+min_workspaces = 3
+workspace_axis = "horizontal"
+
+# HDMI displays
+[output.HDMI-A-1]
+scale = 1
+min_workspaces = 3
+workspace_axis = "horizontal"
 [layout]
 mode = "dwindle"
 gap = 5

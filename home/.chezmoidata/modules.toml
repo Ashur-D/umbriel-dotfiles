@@ -42,7 +42,7 @@ packages = [
     "python-gobject", # needed for power-profiles
 
     # Networking & Bluetooth
-    "networkmanager", # Ethernet + Wi-Fi (pulls in wpa_supplicant)
+    "networkmanager", # Ethernet + Wi-Fi (pulls in wpa_supplicant) or use iwd
     "bluez",
 
     # Capture, Fonts & GTK
