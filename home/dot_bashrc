@@ -49,6 +49,33 @@ command -v fzf &>/dev/null && eval "$(fzf --bash 2>/dev/null || fzf --key-bindin
 # which shadowed the real `umbriel` CLI (msg / windows / config validate).
 alias start='start-umbriel'
 
+###------------------- noctalia export helper -----------------------###
+noctalia-export() {
+    local default_dest
+    if command -v chezmoi &>/dev/null; then
+        local src="$(chezmoi source-path 2>/dev/null)"
+        if [ -n "$src" ] && [ -d "$src/dot_config/noctalia" ]; then
+            default_dest="$src/dot_config/noctalia/config.toml"
+        fi
+    fi
+    default_dest="${default_dest:-$HOME/umbriel-dotfiles/home/dot_config/noctalia/config.toml}"
+
+    local dest="${1:-}"
+    if [ -z "$dest" ]; then
+        read -r -e -p "Export Noctalia config to [$default_dest]: " dest
+    fi
+    dest="${dest:-$default_dest}"
+    dest="${dest/#\~/$HOME}"
+
+    mkdir -p "$(dirname "$dest")"
+    if noctalia config export merged > "$dest"; then
+        echo ":: Noctalia config exported successfully to $dest"
+    else
+        echo ":: Error: Failed to export Noctalia config" >&2
+        return 1
+    fi
+}
+alias nexport='noctalia-export'
 ###------------------- shell wrapper -----------------------###
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

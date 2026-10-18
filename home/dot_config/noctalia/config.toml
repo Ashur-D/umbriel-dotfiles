@@ -123,11 +123,11 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "on_secondary"
-        background_opacity = 0.70000000000000007
+        background_color = "primary"
+        background_opacity = 0.33000000000000002
         background_radius = 32.0
         center_password_text = true
-        input_opacity = 0.78000000000000003
+        input_opacity = 0.93000000000000005
         input_radius = 32.0
         layout = "compact"
         show_caps_lock = false
@@ -180,7 +180,7 @@ widget_order = [
         background = false
         center_text = true
         clock_style = "digital"
-        color = "secondary"
+        color = "primary"
         font_family = "Maple Mono"
         shadow = false
 
@@ -198,7 +198,7 @@ widget_order = [
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
         background = false
         background_opacity = 0.0
-        color = "secondary"
+        color = "primary"
         format = "%A, %B %d"
         shadow = false
 
@@ -209,9 +209,12 @@ position = "bottom_center"
 [plugin_settings."ashur-d/wallpaper-widget"]
 close_on_apply = true
 
+[plugin_settings."cleboost/zed-provider"]
+new_window = true
+
 [plugin_settings."noctalia/mpvpaper"]
 picker_placement = "floating"
-video_directory = "~/.local/share/Steam/steamapps/workshop/content/431960/1439593106"
+video_directory = "/home/ash/.local/share/Steam/steamapps/workshop/content/431960/1439593106"
 
 [plugin_settings."noctalia/screen_recorder"]
 color_range = "full"
@@ -221,13 +224,16 @@ video_source = "focused"
 [plugin_settings."tadomika_ari/w-engine"]
 grid_columns = 3
 
+[plugin_settings."tordex/processes"]
+panel_placement = "floating"
+
 [plugins]
 enabled = [
     "noctalia/screen_recorder",
     "cleboost/zed-provider",
     "ashur-d/arch-packages",
-    "ashur-d/nvim-projects",
-    "ashur-d/wallpaper-widget"
+    "ashur-d/wallpaper-widget",
+    "ashur-d/nvim-projects"
 ]
 
     [[plugins.source]]
@@ -241,13 +247,19 @@ enabled = [
     name = "community"
 
 [shell]
-avatar_path = ""
+avatar_path = "/home/ash/Pictures/wallpapers/wallpapers/wallpaper22.jpg"
 font_family = "Maple Mono"
 panel_anchor_bar = "main"
 settings_window_translucent = true
+umbriel_overview_type_to_launch_enabled = true
 
     [shell.launcher]
     categories = false
+    fetch_exchange_rates = false
+    layout = "simple"
+
+    [shell.mpris]
+    blacklist = [ "helium" ]
 
     [shell.panel]
     control_center_placement = "floating"
@@ -273,21 +285,23 @@ source = "wallpaper"
 wallpaper_scheme = "soft"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "umbriel" ]
-    community_ids = [ "yazi" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
+    community_ids = [ "fastfetch", "yazi" ]
     enable_community_templates = true
 
 [wallpaper]
-directory = "~/Pictures/wallpapers"
-directory_dark = "~/Pictures/wallpapers"
+directory = "/home/ash/Downloads/wallpapers/wallpapers"
+directory_dark = "/home/ash/Downloads/wallpapers/wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+    path = "/home/ash/Downloads/wallpapers/wallpapers/Crystal Cave with Glowing Mushrooms.png"
 
     [wallpaper.last]
-    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+    path = "/home/ash/Downloads/wallpapers/wallpapers/Crystal Cave with Glowing Mushrooms.png"
 
+    [wallpaper.monitors.DP-1]
+    path = "/home/ash/Downloads/wallpapers/wallpapers/Crystal Cave with Glowing Mushrooms.png"
 
 [widget.clock]
 format = "{:L%A %I:%M}"
