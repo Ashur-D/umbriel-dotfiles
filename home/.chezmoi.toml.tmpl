@@ -7,10 +7,14 @@
 {{-   $hasNvidia = contains "nvidia" (lower $gpu) -}}
 {{- end -}}
 
-{{- /* Which modules to enable besides `core`. */ -}}
-{{- $enabled := promptMultichoiceOnce . "enabled" "Optional modules to enable" (list "desktop" "gaming" "dev" "cli" "system" "media" "rice") -}}
+{{- /* Which modules to enable besides `core`. Auto-discovered from modules.toml. */ -}}
+{{- $known := without ((include ".chezmoidata/modules.toml" | fromToml).modules | keys | sortAlpha) "core" -}}
+{{- $enabled := promptMultichoiceOnce . "enabled" "Optional modules to enable" $known -}}
 {{- /* .chezmoi.sourceDir already includes the `home` root, so keep its parent. */ -}}
 sourceDir = {{ dir .chezmoi.sourceDir | quote }}
+
+[diff]
+    exclude = ["scripts"]
 
 [data]
     hasNvidia = {{ $hasNvidia }}
