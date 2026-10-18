@@ -8,7 +8,7 @@
 {{- end -}}
 
 {{- /* Which modules (see .chezmoidata/modules.toml) to enable besides `core`. */ -}}
-{{- $selection := promptStringOnce . "moduleSelection" "Modules to enable (nvim,yazi,zed,fastfetch,cli,dev,desktop,gaming,system,media,rice)" "nvim,yazi,zed,fastfetch,cli,dev" -}}
+{{- $selection := promptStringOnce . "moduleSelection" "Modules to enable (desktop,gaming,dev,cli,system,media,rice)" "desktop,dev,cli" -}}
 {{- /* .chezmoidata is not exposed to this template, so read the file directly. */ -}}
 {{- $known := (include ".chezmoidata/modules.toml" | fromToml).modules -}}
 {{- $enabled := list -}}

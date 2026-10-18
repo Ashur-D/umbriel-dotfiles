@@ -3,45 +3,16 @@
 # A module is a bundle of:
 #   packages  installed by .chezmoiscripts/10-packages
 #   services  enabled by   .chezmoiscripts/20-system   (optional)
-#   config    target path of its config, skipped when the module is off (optional)
 #
 # `core` is always on. Everything else is chosen at `chezmoi init`
 # (stored as `enabled` in ~/.config/chezmoi/chezmoi.toml).
 #
-# Add an app:    add a [modules.<name>] block here, plus its dot_config/<name>/ folder.
-# Remove an app: delete both. No script or ignore file needs editing.
+# Add a module:    add a [modules.<name>] block here.
+# Remove a module: delete its block. No script needs editing.
 
-# Utility apps hidden from the application launcher.
-hidden_apps = [
-    "bssh",
-    "bvnc",
-    "avahi-discover",
-    "rofi-theme-selector",
-    "thunar-bulk-rename",
-    "thunar-settings",
-    "wiremix",
-    "cmake-gui",
-    "org.gnupg.pinentry-qt",
-    "xdg-desktop-portal-gdk",
-    "xgps",
-    "xgpsspeed",
-    "qv4l2",
-    "qvidcap",
-    "lstopo",
-]
-
-# Added automatically when an NVIDIA GPU is detected at `chezmoi init`.
-[nvidia]
-packages = [
-    "nvidia-dkms",
-    "nvidia-utils",
-    "egl-wayland",
-    "libva-nvidia-driver",
-]
-# Only installed when [multilib] is enabled in /etc/pacman.conf.
-multilib_packages = [
-    "lib32-nvidia-utils",
-]
+# Baseline defaults (used when ~/.config/chezmoi/chezmoi.toml does not define them)
+enabled = ["core"]
+hasNvidia = false
 
 # ----------------------------------------------------------------------------
 # Always on
@@ -56,6 +27,9 @@ packages = [
     # Terminal, Shell & Tools
     "kitty",
     "starship",
+    "fastfetch",
+    "yazi",
+    "neovim",
     "chezmoi",
     "xdg-user-dirs",
 
@@ -86,46 +60,55 @@ services = [
     "power-profiles-daemon.service",
 ]
 
-# ----------------------------------------------------------------------------
-# Modules that own a config folder
-# ----------------------------------------------------------------------------
-[modules.nvim]
-config = ".config/nvim"
-packages = ["neovim", "ripgrep", "fd"]
-
-[modules.yazi]
-config = ".config/yazi"
-packages = ["yazi", "7zip", "fd", "ripgrep", "fzf"]
-
-[modules.zed]
-config = ".config/zed"
-packages = ["zed"]
-
-[modules.fastfetch]
-config = ".config/fastfetch"
-packages = ["fastfetch"]
+# Added automatically when an NVIDIA GPU is detected at `chezmoi init`.
+[nvidia]
+packages = [
+    "nvidia-open-dkms",
+    "nvidia-utils",
+    "egl-wayland",
+    "libva-nvidia-driver",
+]
+# Only installed when [multilib] is enabled in /etc/pacman.conf.
+multilib_packages = [
+    "lib32-nvidia-utils",
+]
 
 # ----------------------------------------------------------------------------
-# Package-only modules
+# Optional modules (selected at chezmoi init)
 # ----------------------------------------------------------------------------
-[modules.cli]
-packages = ["eza", "zoxide", "fzf", "fd", "ripgrep", "7zip"]
-
-[modules.dev]
-packages = ["lazygit", "git", "openssh", "winboat"]
-
 [modules.desktop]
 packages = [
     "helium-browser-bin",
     "discord",
     "obsidian",
     "localsend",
-    "fastpotify-bin",
+    "spotifast-bin",
 ]
 
 [modules.gaming]
-packages = ["steam", "proton-cachyos"]
+packages = [
+    "steam",
+    "proton-cachyos-slr",
+]
 
+[modules.dev]
+packages = [
+    "zed",
+    "lazygit",
+    "git",
+    "openssh",
+    "winboat",
+]
+
+[modules.cli]
+packages = [
+    "eza",
+    "zoxide",
+    "fzf",
+    "fd",
+    "ripgrep",
+    "7zip",
+]
 [modules.system]
 packages = [
     "btop",
@@ -144,10 +127,33 @@ packages = ["mpv", "imv", "stremio"]
 packages = [
     "catnap-git",
     "weathr",
-    "stormy-bin",
+    "rustormy-bin",
     "cbonsai",
-    "terminal-rain-lightning-git",
+    "terminal-rain-lightning",
     "scope-tui",
     "astroterm",
     "asciinema",
+]
+
+# ----------------------------------------------------------------------------
+# Launcher overrides
+# ----------------------------------------------------------------------------
+[launcher]
+# Utility apps hidden from the application launcher.
+hidden_apps = [
+    "bssh",
+    "bvnc",
+    "avahi-discover",
+    "rofi-theme-selector",
+    "thunar-bulk-rename",
+    "thunar-settings",
+    "wiremix",
+    "cmake-gui",
+    "org.gnupg.pinentry-qt",
+    "xdg-desktop-portal-gdk",
+    "xgps",
+    "xgpsspeed",
+    "qv4l2",
+    "qvidcap",
+    "lstopo",
 ]

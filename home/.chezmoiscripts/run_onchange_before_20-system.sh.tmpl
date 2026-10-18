@@ -25,7 +25,7 @@ enable() {
         sudo systemctl enable --now "$svc" || warn "failed to enable $svc"
     done
 }
-{{- range (concat (list "core") .enabled) }}
+{{- range (concat (list "core") .enabled | uniq) }}
 {{-   if hasKey $.modules . }}
 {{-     $m := index $.modules . }}
 {{-     if hasKey $m "services" }}
@@ -39,7 +39,7 @@ enable{{ range $m.services }} {{ . | quote }}{{ end }}
 # A minimal per-user override with Hidden=true. (Copying the system file and
 # appending NoDisplay=true could land inside a [Desktop Action] group and do nothing.)
 mkdir -p "$HOME/.local/share/applications"
-for app in {{ range .hidden_apps }}{{ . | quote }} {{ end }}; do
+for app in {{ range .launcher.hidden_apps }}{{ . | quote }} {{ end }}; do
     [ -f "/usr/share/applications/$app.desktop" ] || continue
     printf '[Desktop Entry]\nType=Application\nName=%s\nHidden=true\n' "$app" \
         > "$HOME/.local/share/applications/$app.desktop"

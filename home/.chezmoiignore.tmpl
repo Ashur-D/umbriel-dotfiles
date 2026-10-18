@@ -18,9 +18,3 @@
 **/*.bak
 **/*.swp
 
-# Configs of modules that are not enabled (from .chezmoidata/modules.toml)
-{{ range $name, $m := .modules -}}
-{{   if and (hasKey $m "config") (not (has $name $.enabled)) -}}
-{{ $m.config }}
-{{ end -}}
-{{ end -}}

@@ -14,7 +14,7 @@ if ! command -v yay >/dev/null 2>&1; then
 fi
 
 PKGS=(
-{{- range (concat (list "core") .enabled) }}
+{{- range (concat (list "core") .enabled | uniq) }}
 {{-   if hasKey $.modules . }}
 {{-     $m := index $.modules . }}
     # {{ . }}
