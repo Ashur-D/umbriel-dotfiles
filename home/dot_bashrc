@@ -61,11 +61,11 @@ function y() {
 ###------------------- pi helper -----------------------###
 pi() {
     if [ "$PWD" = "$HOME" ]; then
-        cd "$HOME/PiProjects" && command pi "$@"
+        (cd "$HOME/PiProjects" && command pi "$@")
     else
         command pi "$@"
     fi
 }
 alias piq='pi --no-session'
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"

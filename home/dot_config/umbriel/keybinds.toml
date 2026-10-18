@@ -113,7 +113,11 @@
 # ============================================================================
 # Media & Audio
 # ============================================================================
-"XF86AudioMute" = "spawn:noctalia msg volume-mute"
+"XF86AudioRaiseVolume"  = "spawn:noctalia msg volume-up"
+"XF86AudioLowerVolume"  = "spawn:noctalia msg volume-down"
+"XF86AudioMute"         = "spawn:noctalia msg volume-mute"
+"XF86MonBrightnessUp"   = "spawn:noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
 "XF86AudioPlay" = "spawn:playerctl --ignore-player=chromium,firefox play-pause"
 "XF86AudioNext" = "spawn:playerctl --ignore-player=chromium,firefox next"
 "XF86AudioPrev" = "spawn:playerctl --ignore-player=chromium,firefox previous"
