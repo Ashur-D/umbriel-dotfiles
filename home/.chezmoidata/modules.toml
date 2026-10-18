@@ -37,7 +37,6 @@ packages = [
     "pipewire",
     "pipewire-pulse",
     "wireplumber",
-    "playerctl",
     "power-profiles-daemon",
     "python-gobject", # needed for power-profiles
 
