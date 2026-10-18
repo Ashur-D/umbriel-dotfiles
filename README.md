@@ -116,8 +116,8 @@ If you already have a chezmoi config from an older version of this repo, run `ch
 |---|---|
 | `home/.chezmoidata/modules.toml` | Modules, Nvidia packages, launcher-hidden apps |
 | `home/.chezmoi.toml.tmpl` | `init` questions and Nvidia detection |
-| `home/.chezmoiignore.tmpl` | Ignored runtime/generated files and local notes |
-| `home/.chezmoiscripts/` | `10-packages` (yay + packages), `20-system` (services, hidden apps), `30-yazi-plugins` |
+| `home/.chezmoiignore` | Ignored runtime/generated files and local notes |
+| `home/.chezmoiscripts/` | `install.sh.tmpl` (yay-bin, packages, services, launcher), `yazi-plugins.sh.tmpl` |
 | `home/dot_config/…` | App configs |
 
 Networking is NetworkManager (Ethernet + Wi-Fi, no config files). If `iwd` or `systemd-networkd` is already enabled, the system script skips NetworkManager and prints the commands to switch.
