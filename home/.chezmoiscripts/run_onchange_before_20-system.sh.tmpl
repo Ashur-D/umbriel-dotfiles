@@ -1,6 +1,6 @@
 #!/bin/bash
 # Services, networking and launcher cleanup. Idempotent; re-runs when
-# `hidden_apps` in .chezmoidata/packages.toml changes.
+# the module services or `hidden_apps` in .chezmoidata/modules.toml change.
 set -euo pipefail
 
 warn() { echo ":: WARNING: $*" >&2; }
@@ -13,7 +13,14 @@ enable() {
         sudo systemctl enable --now "$svc" || warn "failed to enable $svc"
     done
 }
-enable bluetooth.service power-profiles-daemon.service
+{{- range (concat (list "core") .enabled) }}
+{{-   if hasKey $.modules . }}
+{{-     $m := index $.modules . }}
+{{-     if hasKey $m "services" }}
+enable{{ range $m.services }} {{ . | quote }}{{ end }}
+{{-     end }}
+{{-   end }}
+{{- end }}
 
 # --- Networking: iwd + systemd-networkd, unless NetworkManager is present ---
 if systemctl is-enabled NetworkManager >/dev/null 2>&1 || command -v nmcli >/dev/null 2>&1; then

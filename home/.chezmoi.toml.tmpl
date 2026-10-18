@@ -7,12 +7,25 @@
 {{-   $hasNvidia = contains "nvidia" (lower $gpu) -}}
 {{- end -}}
 
-{{- /* Optional groups from .chezmoidata/packages.toml: desktop,gaming,dev,cli,system,media,rice */ -}}
-{{- $groups := promptStringOnce . "packageGroups" "Optional package groups (comma separated: desktop,gaming,dev,cli,system,media,rice)" "dev,cli" -}}
+{{- /* Which modules (see .chezmoidata/modules.toml) to enable besides `core`. */ -}}
+{{- $selection := promptStringOnce . "moduleSelection" "Modules to enable (nvim,yazi,zed,fastfetch,cli,dev,desktop,gaming,system,media,rice)" "nvim,yazi,zed,fastfetch,cli,dev" -}}
+{{- /* .chezmoidata is not exposed to this template, so read the file directly. */ -}}
+{{- $known := (include ".chezmoidata/modules.toml" | fromToml).modules -}}
+{{- $enabled := list -}}
+{{- range splitList "," $selection -}}
+{{-   $name := trim . -}}
+{{-   if $name -}}
+{{-     if not (hasKey $known $name) -}}
+{{-       fail (printf "unknown module %q (see .chezmoidata/modules.toml)" $name) -}}
+{{-     end -}}
+{{-     $enabled = append $enabled $name -}}
+{{-   end -}}
+{{- end -}}
 
 {{- /* .chezmoi.sourceDir already includes the `home` root, so keep its parent. */ -}}
 sourceDir = {{ dir .chezmoi.sourceDir | quote }}
 
 [data]
     hasNvidia = {{ $hasNvidia }}
-    packageGroups = {{ $groups | quote }}
+    moduleSelection = {{ $selection | quote }}
+    enabled = {{ $enabled | toJson }}

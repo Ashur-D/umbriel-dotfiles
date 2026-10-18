@@ -1,6 +1,6 @@
 #!/bin/bash
-# Installs yay (if missing) and every selected package.
-# Re-runs only when the rendered list changes: edit .chezmoidata/packages.toml.
+# Installs yay (if missing) and the packages of every enabled module.
+# Re-runs only when the rendered list changes: edit .chezmoidata/modules.toml.
 set -euo pipefail
 
 if ! command -v yay >/dev/null 2>&1; then
@@ -14,15 +14,14 @@ if ! command -v yay >/dev/null 2>&1; then
 fi
 
 PKGS=(
-{{- range .packages.core }}
+{{- range (concat (list "core") .enabled) }}
+{{-   if hasKey $.modules . }}
+{{-     $m := index $.modules . }}
+    # {{ . }}
+{{-     if hasKey $m "packages" }}
+{{-       range $m.packages }}
     {{ . | quote }}
-{{- end }}
-{{- range (splitList "," .packageGroups) }}
-{{-   $group := trim . }}
-{{-   if hasKey $.packages $group }}
-    # {{ $group }}
-{{-     range index $.packages $group }}
-    {{ . | quote }}
+{{-       end }}
 {{-     end }}
 {{-   end }}
 {{- end }}
