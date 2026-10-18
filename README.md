@@ -11,7 +11,7 @@ sudo pacman -S --needed git chezmoi
 chezmoi init --apply Ashur-D/umbriel-dotfiles
 ```
 
-`init` asks which modules to enable and detects an Nvidia GPU, then applies everything: packages, drivers, services, configs and wallpapers.
+`init` asks which modules to enable and detects an Nvidia GPU, then applies everything: packages, drivers, services, and configs.
 
 ## Day to day
 
@@ -26,8 +26,8 @@ Everything installable lives in `home/.chezmoidata/modules.toml`. A module bundl
 
 | Key | Meaning |
 |---|---|
-| `packages` | installed by the packages script |
-| `services` | enabled by the system script (optional) |
+| `packages` | packages installed via yay-bin |
+| `services` | systemd services enabled via systemctl (optional) |
 
 `core` is always on. The rest are chosen at `init` (`desktop`, `gaming`, `dev`, `cli`, `system`, `media`, `rice`). Change the selection by running `chezmoi init` again.
 
@@ -60,6 +60,7 @@ Everything installable lives in `home/.chezmoidata/modules.toml`. A module bundl
 | `git` | Fast, scalable distributed version control system |
 | `openssh` | Secure shell remote access & cryptographic tools |
 | `winboat` | Run Windows apps on Linux with seamless integration |
+
 ### 🔍 Modern CLI & Navigation (`cli`)
 
 | Package | Description |
@@ -108,7 +109,7 @@ Everything installable lives in `home/.chezmoidata/modules.toml`. A module bundl
 **Add a module:** add a `[modules.<name>]` block here.
 **Remove one:** delete its block. No script needs editing.
 
-If you already have a chezmoi config from an older version of this repo, run `chezmoi init` once so it picks up `enabled` and `hasNvidia`; until then, templates fail with a missing-key error.
+If you previously ran chezmoi on an older version of this repo, run `chezmoi init` once to update your machine settings.
 
 ## Layout
 
@@ -120,5 +121,7 @@ If you already have a chezmoi config from an older version of this repo, run `ch
 | `home/.chezmoiscripts/` | `install.sh.tmpl` (yay-bin, packages, services, launcher), `yazi-plugins.sh.tmpl` |
 | `home/dot_config/…` | App configs |
 
-Networking is NetworkManager (Ethernet + Wi-Fi, no config files). If `iwd` or `systemd-networkd` is already enabled, the system script skips NetworkManager and prints the commands to switch.
+## Notes
 
+* **Networking:** Managed via NetworkManager (Ethernet + Wi-Fi). If `iwd` or `systemd-networkd` is already running on the machine, the install script skips NetworkManager and prints instructions to prevent dropping your connection.
+* **Wallpapers:** Noctalia provides a built-in default wallpaper out of the box. Drop or clone any wallpapers into `~/Pictures/wallpapers` to use them in Noctalia's wallpaper picker.
