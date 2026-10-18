@@ -53,6 +53,11 @@ packages = [
     "noto-fonts-emoji",        # or ttf-apple-emoji
     "noto-fonts",
     "adw-gtk-theme",
+
+    # Security, Keyring & Memory
+    "keepassxc",
+    "libsecret",
+    "zram-generator",
 ]
 services = [
     "NetworkManager.service",
