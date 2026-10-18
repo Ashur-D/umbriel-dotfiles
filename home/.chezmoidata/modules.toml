@@ -57,7 +57,6 @@ packages = [
     # Security, Keyring & Memory
     "oo7",
     "libsecret",
-    "zram-generator",
 ]
 services = [
     "NetworkManager.service",
