@@ -55,7 +55,7 @@ packages = [
     "adw-gtk-theme",
 
     # Security, Keyring & Memory
-    "keepassxc",
+    "oo7",
     "libsecret",
     "zram-generator",
 ]
