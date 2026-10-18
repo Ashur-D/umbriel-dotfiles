@@ -2,14 +2,19 @@
 back_and_forth = true
 empty_above = false
 
+# ----------------------------------------------------------------------------
+# Outputs
+# ----------------------------------------------------------------------------
+# Default settings for any connected display (laptops, HDMI, multi-monitor)
+[output."*"]
+scale = 1
+min_workspaces = 3
+workspace_axis = "horizontal"
+
+# Primary desktop monitor override (180Hz)
 [output.DP-1]
 mode = "1920x1080@180"
 position = [0, 0]
-scale = 1
-min_workspaces = 3
-# workspaces = 5
-workspace_axis = "horizontal"
-
 [layout]
 mode = "dwindle"
 gap = 5
