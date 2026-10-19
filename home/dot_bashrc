@@ -76,6 +76,24 @@ noctalia-export() {
     fi
 }
 alias nexport='noctalia-export'
+
+noctalia-toggle() {
+    local cfg="$HOME/.config/noctalia/config.toml"
+    local custom="$HOME/.config/noctalia/config.toml.custom"
+
+    if [ -f "$cfg" ]; then
+        mv "$cfg" "$custom"
+        echo ":: Switched to Noctalia Absolute Factory Defaults"
+    elif [ -f "$custom" ]; then
+        mv "$custom" "$cfg"
+        echo ":: Switched to your Custom Rice"
+    else
+        echo ":: Error: Neither config.toml nor config.toml.custom found in ~/.config/noctalia/" >&2
+        return 1
+    fi
+    noctalia msg config-reload 2>/dev/null || true
+}
+alias ntoggle='noctalia-toggle'
 ###------------------- shell wrapper -----------------------###
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
