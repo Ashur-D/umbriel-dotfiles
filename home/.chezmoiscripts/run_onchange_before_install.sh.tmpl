@@ -5,6 +5,12 @@ set -euo pipefail
 
 warn() { echo ":: WARNING: $*" >&2; }
 
+# --- Logging ----------------------------------------------------------------
+LOG_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/umbriel"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/install.log"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo ":: Starting installation. Log: $LOG_FILE"
 # --- 1. Bootstrap yay-bin from AUR if missing ------------------------------
 if ! command -v yay >/dev/null 2>&1; then
     echo ":: Installing yay-bin from AUR..."
