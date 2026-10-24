@@ -45,4 +45,3 @@ enabled = true
 duration_ms = 380
 curve = "emphasizedDecel"
 dim = 0.3
-scale = 0.9

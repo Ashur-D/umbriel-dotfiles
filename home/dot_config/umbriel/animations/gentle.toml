@@ -44,4 +44,3 @@ enabled = true
 duration_ms = 500
 curve = "smoothDecel"
 dim = 0.35
-scale = 0.95

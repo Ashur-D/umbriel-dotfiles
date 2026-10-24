@@ -48,4 +48,3 @@ enabled = true
 duration_ms = 350
 curve = "elasticPop"
 dim = 0.3
-scale = 0.8

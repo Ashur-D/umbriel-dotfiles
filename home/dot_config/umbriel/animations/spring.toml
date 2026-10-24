@@ -44,4 +44,3 @@ enabled = true
 duration_ms = 300
 curve = "appleSpring"
 dim = 0.4
-scale = 0.9

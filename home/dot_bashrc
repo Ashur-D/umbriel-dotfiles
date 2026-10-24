@@ -106,7 +106,7 @@ function y() {
 ###------------------- pi helper -----------------------###
 pi() {
     if [ "$PWD" = "$HOME" ]; then
-        (cd "$HOME/PiProjects" && command pi "$@")
+        (mkdir -p "$HOME/Projects/PiProjects" && cd "$HOME/Projects/PiProjects" && command pi "$@")
     else
         command pi "$@"
     fi
