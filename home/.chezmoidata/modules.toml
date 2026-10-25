@@ -13,6 +13,7 @@
 # Baseline defaults (used when ~/.config/chezmoi/chezmoi.toml does not define them)
 enabled = ["core"]
 hasNvidia = false
+nvidiaOnly = false
 
 # ----------------------------------------------------------------------------
 # Always on
