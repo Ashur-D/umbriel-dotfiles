@@ -2,6 +2,7 @@
 # Window rules
 # Matching rules combine; for the same field, the later rule wins.
 # Windows default to fully opaque, so only opt in below.
+# Use `umbriel windows` to find app IDs.
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
