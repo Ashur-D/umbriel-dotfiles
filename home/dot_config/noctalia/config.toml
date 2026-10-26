@@ -262,7 +262,7 @@ umbriel_overview_type_to_launch_enabled = true
     blacklist = [ "helium" ]
 
     [shell.panel]
-    borders = false
+    # borders = false
     control_center_placement = "floating"
     control_center_position = "auto"
     session_placement = "floating"
