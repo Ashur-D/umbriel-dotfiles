@@ -60,8 +60,10 @@ fragment_main(float4 color, KittyTextures t, KittyCustomShaderData d) {
         float2 cellID = floor(gridUV);
         float2 cellUV = frac(gridUV);
 
-        // fade out stars as they fly past the edges (1:1 original circular vignette)
-        float edgeFade = 1.0f - smoothstep(0.3f, 0.8f, length(centeredUV));
+        // fade out stars only right at the screen edges (full-extent fade)
+        float2 screenDist = abs(uv - 0.5f) * 2.0f;
+        float edgeDist = max(screenDist.x, screenDist.y);
+        float edgeFade = 1.0f - smoothstep(0.92f, 1.02f, edgeDist);
 
         brightness += starCell(cellID, cellUV, fi, t_time) * (1.0f - fi * 0.2f) * edgeFade;
     }
