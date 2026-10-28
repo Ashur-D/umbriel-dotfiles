@@ -2,10 +2,10 @@ palette = "noctalia"
 # add_newline = false
 
 format = """
-[](red)\
+[](blue)\
 $os\
 $username\
-[](bg:yellow fg:red)\
+[](bg:yellow fg:blue)\
 $directory\
 [](bg:cyan fg:yellow)\
 $git_branch\
@@ -20,13 +20,13 @@ $character"""
 
 [username]
 show_always = true
-style_user = "bg:red fg:black bold"
-style_root = "bg:red fg:black bold"
+style_user = "bg:blue fg:black bold"
+style_root = "bg:blue fg:black bold"
 format = '[$user ]($style)'
 disabled = false
 
 [os]
-style = "bg:red fg:black"
+style = "bg:blue fg:black"
 disabled = true
 
 [directory]
@@ -62,35 +62,35 @@ vimcmd_symbol = "[❮](bold magenta)"
 
 [palettes.noctalia]
 # Standard colors
-blue      = "#bd9cd5"
+blue      = "#9e72c4"
 red       = "#fd4663"
-green     = "#92b2df"
-yellow    = "#9e99d8"
-cyan      = "#a7a3dc"
-magenta   = "#a1bade"
+green     = "#7ea3ce"
+yellow    = "#7c7bd8"
+cyan      = "#a4a3dc"
+magenta   = "#a3bddc"
 white     = "#f2f2f3"
 black     = "#212830"
 
 # Extended palette (Catppuccin-compatible names)
-rosewater = "#9e99d8"
+rosewater = "#7c7bd8"
 flamingo  = "#fd4663"
-pink      = "#a1bade"
-mauve     = "#a1bade"
+pink      = "#a3bddc"
+mauve     = "#a3bddc"
 maroon    = "#fd4663"
-peach     = "#9e99d8"
-teal      = "#a7a3dc"
-sky       = "#a7a3dc"
-sapphire  = "#bd9cd5"
-lavender  = "#a1bade"
+peach     = "#7c7bd8"
+teal      = "#a4a3dc"
+sky       = "#a4a3dc"
+sapphire  = "#9e72c4"
+lavender  = "#a3bddc"
 
 # Text shades
 text      = "#f2f2f3"
 subtext1  = "#f2f2f3"
-subtext0  = "#626972"
+subtext0  = "#616971"
 
 # Surface shades
-overlay2  = "#626972"
-overlay1  = "#626972"
+overlay2  = "#616971"
+overlay1  = "#616971"
 overlay0  = "#212830"
 surface2  = "#212830"
 surface1  = "#212830"

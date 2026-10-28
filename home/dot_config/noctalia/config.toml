@@ -13,17 +13,16 @@ order = [ "main" ]
     margin_edge = 5
     margin_ends = 5
     padding = 0
+    show_tooltip = false
     start = [ "group:g2" ]
     thickness = 37
-
-        [bar.main.dead_zone.actions]
-        left = "wallpaper-next"
 
         [[bar.main.capsule_group]]
         accordion = true
         accordion_direction = "end"
+        border_width = 1.0
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         foreground = "secondary"
         id = "g1"
         members = [ "media", "tray" ]
@@ -34,8 +33,9 @@ order = [ "main" ]
         accordion = false
         accordion_direction = "end"
         border = ""
+        border_width = 1.0
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         foreground = "secondary"
         id = "g2"
         members = [ "clock", "recorder" ]
@@ -64,7 +64,6 @@ show_shortcut_labels = false
     type = "caffeine"
 
 [desktop_widgets]
-enabled = false
 schema_version = 2
 widget_order = []
 
@@ -134,6 +133,7 @@ widget_order = [
         show_keyboard_layout = false
         show_login_button = false
         show_media = false
+        show_password_reveal = false
         show_session_buttons = false
         show_unlock_hint = false
         show_weather = false
@@ -150,7 +150,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -161,6 +161,7 @@ widget_order = [
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -202,12 +203,17 @@ widget_order = [
         format = "%A, %B %d"
         shadow = false
 
+[notification]
+border_color = "primary"
+border_width = 3.0
+
 [osd]
 offset_y = 80
 position = "bottom_center"
 
 [plugin_settings."ashur-d/wallpaper-widget"]
 close_on_apply = true
+notify_on_change = false
 
 [plugin_settings."cleboost/zed-provider"]
 new_window = true
@@ -221,6 +227,9 @@ color_range = "full"
 hide_inactive = true
 video_source = "focused"
 
+[plugin_settings."noctalia/umbriel-companion"]
+panel_placement = "floating"
+
 [plugin_settings."tadomika_ari/w-engine"]
 grid_columns = 3
 
@@ -232,8 +241,8 @@ enabled = [
     "noctalia/screen_recorder",
     "cleboost/zed-provider",
     "ashur-d/arch-packages",
-    "ashur-d/wallpaper-widget",
-    "ashur-d/nvim-projects"
+    "ashur-d/nvim-projects",
+    "ashur-d/wallpaper-widget"
 ]
 
     [[plugins.source]]
@@ -247,28 +256,24 @@ enabled = [
     name = "community"
 
 [shell]
-avatar_path = "/home/ash/Pictures/wallpapers/wallpapers/wallpaper22.jpg"
+avatar_path = "/home/ash/Downloads/50eabe90cf087b99f91971b0bd939f97.jpg"
 font_family = "Maple Mono"
-panel_anchor_bar = "main"
+settings_expand_all_groups = true
 settings_window_translucent = true
-umbriel_overview_type_to_launch_enabled = true
 
     [shell.launcher]
     categories = false
-    fetch_exchange_rates = false
     layout = "simple"
 
     [shell.mpris]
     blacklist = [ "helium" ]
 
     [shell.panel]
-    # borders = false
     control_center_placement = "floating"
     control_center_position = "auto"
     session_placement = "floating"
     transparency_mode = "glass"
     wallpaper_placement = "floating"
-    wallpaper_position = "center"
 
     [shell.screenshot]
     annotate = true
@@ -279,30 +284,27 @@ umbriel_overview_type_to_launch_enabled = true
     show_shortcuts = false
 
 [theme]
-builtin = "Gruvbox"
 community_palette = "Cream Autumn"
-mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "soft"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "starship", "umbriel" ]
-    community_ids = [ "fastfetch", "yazi" ]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "umbriel" ]
+    community_ids = [ "pi-agent", "spotifast", "zed", "fastfetch", "yazi", "starship" ]
     enable_community_templates = true
 
 [wallpaper]
-directory = "/home/ash/Downloads/wallpapers/wallpapers"
-directory_dark = "/home/ash/Downloads/wallpapers/wallpapers"
-transition_on_startup = true
+directory = "/home/ash/Projects/wallpapers/wallpapers"
+directory_dark = "/home/ash/Projects/wallpapers/wallpapers"
 
     [wallpaper.default]
-    path = "/home/ash/Downloads/wallpapers/wallpapers/Crystal Cave with Glowing Mushrooms.png"
+    path = "/home/ash/Projects/wallpapers/wallpapers/Mystical Forest Waterfall at Night.jpeg"
 
     [wallpaper.last]
-    path = "/home/ash/Downloads/wallpapers/wallpapers/Crystal Cave with Glowing Mushrooms.png"
+    path = "/home/ash/Projects/wallpapers/wallpapers/Mystical Forest Waterfall at Night.jpeg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/ash/Downloads/wallpapers/wallpapers/Crystal Cave with Glowing Mushrooms.png"
+    path = "/home/ash/Projects/wallpapers/wallpapers/Mystical Forest Waterfall at Night.jpeg"
 
 [widget.clock]
 format = "{:L%A %I:%M}"
