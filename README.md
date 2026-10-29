@@ -108,6 +108,7 @@ Everything installable lives in `home/.chezmoidata/modules.toml`. A module bundl
 | `asciinema` | Lightweight terminal session recorder and sharer |
 
 </details>
+
 **Add a module:** add a `[modules.<name>]` block here.
 **Remove one:** delete its block. No script needs editing.
 
