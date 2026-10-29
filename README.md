@@ -60,6 +60,8 @@ Everything installable lives in `home/.chezmoidata/modules.toml`. A module bundl
 | `git` | Fast, scalable distributed version control system |
 | `openssh` | Secure shell remote access & cryptographic tools |
 | `winboat` | Run Windows apps on Linux with seamless integration |
+| `t3code-nightly-bin` | Desktop control surface for local coding agents |
+| `gnome-boxes` | Simple GNOME application to access virtual systems |
 
 ### 🔍 Modern CLI & Navigation (`cli`)
 

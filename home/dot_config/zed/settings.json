@@ -8,6 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --- Core Editor Settings ---
+  "markdown_preview": {
+    "max_width": 1200.0
+  },
   "indent_guides": {
     "background_coloring": "indent_aware",
     "coloring": "indent_aware"
