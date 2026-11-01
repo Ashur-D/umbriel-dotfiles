@@ -1,0 +1,9 @@
+# Wallpapers used by Noctalia (see wallpaper.* in dot_config/noctalia/config.toml).
+# Extracts github.com/Ashur-D/wallpapers/wallpapers/* straight into ~/Pictures/wallpapers.
+# Not `exact`: files already in that folder are left alone. Re-downloaded at most weekly.
+["Pictures/wallpapers"]
+    type = "archive"
+    url = "https://github.com/Ashur-D/wallpapers/archive/refs/heads/main.tar.gz"
+    stripComponents = 2
+    include = ["*/wallpapers/**"]
+    refreshPeriod = "168h"

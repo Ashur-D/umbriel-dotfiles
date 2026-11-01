@@ -197,10 +197,10 @@ wallpaper_scheme = "soft"
     community_ids = [ "pi-agent", "spotifast", "zed", "fastfetch", "yazi", "starship" ]
 
 [wallpaper]
-directory = "/home/ash/Projects/wallpapers/wallpapers"
+directory = "~/Pictures/wallpapers"
 
     [wallpaper.default]
-    path = "/home/ash/Projects/wallpapers/wallpapers/Mystical Forest Waterfall at Night.jpeg"
+    path = "~/Pictures/wallpapers/Mystical Forest Waterfall at Night.jpeg"
 
 [widget.clock]
 format = "{:L%A %I:%M}"

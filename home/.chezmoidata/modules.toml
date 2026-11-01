@@ -1,8 +1,8 @@
 # Template data: the single place that says what gets installed and enabled.
 #
 # A module is a bundle of:
-#   packages  installed by .chezmoiscripts/10-packages
-#   services  enabled by   .chezmoiscripts/20-system   (optional)
+#   packages  installed by .chezmoiscripts/run_onchange_before_install.sh.tmpl
+#   services  enabled by   the same script                             (optional)
 #
 # `core` is always on. Everything else is chosen at `chezmoi init`
 # (stored as `enabled` in ~/.config/chezmoi/chezmoi.toml).

@@ -121,10 +121,12 @@ If you previously ran chezmoi on an older version of this repo, run `chezmoi ini
 | `home/.chezmoidata/modules.toml` | Modules, Nvidia packages, launcher-hidden apps |
 | `home/.chezmoi.toml.tmpl` | `init` questions and Nvidia detection |
 | `home/.chezmoiignore` | Ignored runtime/generated files and local notes |
-| `home/.chezmoiscripts/` | `install.sh.tmpl` (yay-bin, packages, services, launcher), `yazi-plugins.sh.tmpl` |
+| `home/.chezmoiexternal.toml` | External repos pulled in by chezmoi (wallpapers) |
+| `home/.chezmoiscripts/` | `run_onchange_before_install.sh.tmpl` (yay-bin, packages, services, launcher), `run_onchange_after_yazi-plugins.sh.tmpl` |
 | `home/dot_config/…` | App configs |
 
 ## Notes
 
 * **Networking:** Managed via NetworkManager (Ethernet + Wi-Fi). If `iwd` or `systemd-networkd` is already running on the machine, the install script skips NetworkManager and prints instructions to prevent dropping your connection.
-* **Wallpapers:** Noctalia provides a built-in default wallpaper out of the box. Drop or clone any wallpapers into `~/Pictures/wallpapers` to use them in Noctalia's wallpaper picker.
+* **Wallpapers:** `home/.chezmoiexternal.toml` downloads [Ashur-D/wallpapers](https://github.com/Ashur-D/wallpapers) into `~/Pictures/wallpapers` (weekly refresh). Noctalia reads from that folder. Other files you put there are left alone.
+* **Noctalia config:** `~/.config/noctalia/config.toml` is the only source of truth. The settings window saves changes to `~/.local/state/noctalia/settings.toml`, which overrides `config.toml`. Copy anything you want to keep into `config.toml`, then delete `settings.toml`.
