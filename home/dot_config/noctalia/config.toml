@@ -9,7 +9,6 @@ order = [ "main" ]
     capsule_thickness = 1.0
     center = [ "workspaces" ]
     end = [ "group:g1" ]
-    font_family = "Maple Mono"
     margin_edge = 5
     margin_ends = 5
     padding = 0
@@ -37,40 +36,10 @@ order = [ "main" ]
 [control_center]
 show_shortcut_labels = false
 
-    [[control_center.shortcuts]]
-    type = "session"
-
-    [[control_center.shortcuts]]
-    type = "clipboard"
-
-    [[control_center.shortcuts]]
-    type = "wallpaper"
-
-    [[control_center.shortcuts]]
-    type = "nightlight"
-
-    [[control_center.shortcuts]]
-    type = "weather"
-
-    [[control_center.shortcuts]]
-    type = "caffeine"
-
-[idle]
-behavior_order = [ "lock" ]
-
-    [idle.behavior.lock]
-    action = "lock"
-    enabled = true
-    timeout = 600.0
-
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [
-    "lockscreen-login-box@DP-1",
-    "lockscreen-widget-0000000000000001",
-    "lockscreen-widget-0000000000000002"
-]
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-widget-0000000000000001", "lockscreen-widget-0000000000000002" ]
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
     box_height = 70.0
@@ -153,16 +122,12 @@ color_range = "full"
 hide_inactive = true
 
 [plugins]
-enabled = [
-    "noctalia/screen_recorder",
-    "cleboost/zed-provider",
-    "ashur-d/nvim-projects",
-    "ashur-d/wallpaper-widget"
-]
+enabled = [ "noctalia/screen_recorder", "cleboost/zed-provider", "ashur-d/nvim-projects", "ashur-d/wallpaper-widget" ]
 
 [shell]
 font_family = "Maple Mono"
 settings_expand_all_groups = true
+settings_show_advanced = false
 settings_window_translucent = true
 
     [shell.launcher]
@@ -172,9 +137,6 @@ settings_window_translucent = true
 
         [shell.launcher.providers.calculator]
         global = false
-
-    [shell.mpris]
-    blacklist = [ "helium" ]
 
     [shell.panel]
     control_center_placement = "floating"

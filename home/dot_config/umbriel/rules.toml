@@ -33,20 +33,15 @@ blur_optimized = true
 # ----------------------------------------------------------------------------
 # Per-app overrides
 # ----------------------------------------------------------------------------
-[[window_rule]]
-match.app_id = '^zeron.*$'
-opacity = 0.80
-blur = true
-blur_optimized = true
-default_floating = true
 
 [[window_rule]]
-match.app_id = '^com\.t3tools\.T3Code$'
-opacity = 0.87
+match.app_id = [
+    '^com\.t3tools\.T3Code$',
+    '^zen$',
+]
+opacity = 0.90
 blur = true
 blur_optimized = true
-default_floating = true
-
 
 # ----------------------------------------------------------------------------
 # Steam Rules
